@@ -12,8 +12,6 @@ class Client {
         // number
         try (Socket socket = new Socket("localhost", 1234)) {
             //test
-            Login login = new Login("Login");
-            HashMap<String, String> data = login.getData();
 
 
             // writing to server
@@ -30,6 +28,7 @@ class Client {
             String line = null;
 
             while (!"exit".equalsIgnoreCase(line)) {
+                Login login = new Login("Login",out);
 
                 // reading from user
                 line = sc.nextLine();
