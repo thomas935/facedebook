@@ -33,7 +33,7 @@ class Client {
                 line = in.readLine();
                 if (Objects.equals(line, "1")){
                     System.out.println("Connection established");
-                    new messagerieFacedeBook();
+                    new messagerieFacedeBook(out);
                 }else{
                     JOptionPane.showMessageDialog(null, "Identifiants invalides.");
                 }
