@@ -12,12 +12,22 @@ public class Server {
     public static void main(String[] args) throws IOException {
         try (ServerSocket serverSocket = new ServerSocket(PORT)) {
             System.out.println("Server started");
-            while (true) {
-                Socket socket = serverSocket.accept();
-                clients.add(socket);
-                System.out.println("Client connected");
-                new Thread(new ClientHandler(socket)).start();
-            }
+            Thread threadAccept = new Thread(() -> {
+                try {
+                    AcceptClients(serverSocket);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+            threadAccept.start();
+        }
+    }
+
+    public static void  AcceptClients(ServerSocket serverSocket) throws IOException {
+        while (true) {
+            Socket socket = serverSocket.accept();
+            clients.add(socket);
+            new Thread(new ClientHandler(socket)).start();
         }
     }
 
