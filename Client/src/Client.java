@@ -26,13 +26,14 @@ class Client {
 
 
             String line = null;
-
+            new Login("Login",out);
             while (!"exit".equalsIgnoreCase(line)) {
-                new Login("Login",out);
+
                 // reading from user
                 line = in.readLine();
                 if (Objects.equals(line, "1")){
                     System.out.println("Connection established");
+                    new messagerieFacedeBook();
                 }else{
                     JOptionPane.showMessageDialog(null, "Identifiants invalides.");
                 }

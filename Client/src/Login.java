@@ -11,8 +11,6 @@ public class Login extends JFrame {
     private JButton loginButton;
     private JLabel UserName;
     private JLabel PassWord;
-    private String username;
-    private String password;
     private PrintWriter out;
 
 
