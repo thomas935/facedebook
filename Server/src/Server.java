@@ -86,18 +86,13 @@ class Server {
                         String username = words[1];
                         String password = words[2];
                         if (Database.identification("SELECT*FROM `User` WHERE Login ='" +username+"' AND Password = '"+password+"'")) {
-                            out.println("connexion ok");
+                            out.println("1");
                         } else {
-                            out.println("connexion ko");
+                            out.println("0");
                         }
                     }
 
-                    // writing the received message from
-                    // client
-                    System.out.printf(
-                            " Sent from the client: %s\n",
-                            line);
-                    out.println(line);
+
                 }
             }
             catch (IOException e) {

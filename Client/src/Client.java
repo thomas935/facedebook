@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.io.*;
 import java.net.*;
 import java.util.*;
@@ -23,27 +24,22 @@ class Client {
                     = new BufferedReader(new InputStreamReader(
                     socket.getInputStream()));
 
-            // object of scanner class
-            Scanner sc = new Scanner(System.in);
+
             String line = null;
 
             while (!"exit".equalsIgnoreCase(line)) {
-
+                new Login("Login",out);
                 // reading from user
-                line = sc.nextLine();
+                line = in.readLine();
+                if (Objects.equals(line, "1")){
+                    System.out.println("Connection established");
+                }else{
+                    JOptionPane.showMessageDialog(null, "Identifiants invalides.");
+                }
 
-
-                // sending the user input to server
-                out.println(line);
-                out.flush();
-
-                // displaying server reply
-                System.out.println("Server replied "
-                        + in.readLine());
             }
 
-            // closing the scanner object
-            sc.close();
+
         }
         catch (IOException e) {
             e.printStackTrace();

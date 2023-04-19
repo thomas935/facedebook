@@ -28,7 +28,7 @@ public class Login extends JFrame {
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                out.println("connexion"+UsernameText.getText()+" "+passwordField1.getText()) ;
+                out.println("connexion "+UsernameText.getText()+" "+passwordField1.getText()) ;
                 UsernameText.setText("");
                 passwordField1.setText("");
             }
