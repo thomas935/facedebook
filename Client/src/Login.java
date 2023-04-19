@@ -10,6 +10,8 @@ public class Login extends JFrame{
     private JButton loginButton;
     private JLabel UserName;
     private JLabel PassWord;
+    String username;
+    String password;
 
 
 public Login(String windowLogin) {
@@ -24,17 +26,20 @@ public Login(String windowLogin) {
     loginButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            String username = UsernameText.getText();
-            String password = passwordField1.getText();
-
+             username = UsernameText.getText();
+             password = passwordField1.getText();
+             getData();
         }
     });
 
 }
-public HashMap<String, String> getLoginInfo(String username, String password){
-    HashMap<String, String> loginInfo = new HashMap<String, String>();
-    loginInfo.put(username, password);
 
-    return loginInfo;
-}
+
+    public HashMap<String, String> getData() {
+        HashMap<String, String> loginInfo = new HashMap<String, String>();
+        loginInfo.put("username", username);
+        loginInfo.put("password", password);
+        System.out.println(loginInfo);
+        return loginInfo;
+    }
 }

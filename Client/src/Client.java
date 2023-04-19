@@ -11,6 +11,10 @@ class Client {
         // establish a connection by providing host and port
         // number
         try (Socket socket = new Socket("localhost", 1234)) {
+            //test
+            Login login = new Login("Login");
+            HashMap<String, String> data = login.getData();
+
 
             // writing to server
             PrintWriter out = new PrintWriter(
@@ -29,7 +33,7 @@ class Client {
 
                 // reading from user
                 line = sc.nextLine();
-                new Login("Login");
+
 
                 // sending the user input to server
                 out.println(line);
