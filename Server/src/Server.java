@@ -5,34 +5,50 @@ import java.util.ArrayList;
 
 
 public class Server {
-    private ArrayList<Socket> clientSockets = new ArrayList<>();
-    private ServerSocket serverSocket;
-    private Socket Client;
+    private static final int PORT = 8080;
+    private static final String EXIT = "exit";
+    private static final ArrayList<Socket> clients = new ArrayList<>();
 
-    public Server() {
-        try {
-            serverSocket = new ServerSocket(1234);
-        } catch (IOException e) {
-            System.out.println("Erreur lors de la creation du serveur");
+    public static void main(String[] args) throws IOException {
+        try (ServerSocket serverSocket = new ServerSocket(PORT)) {
+            System.out.println("Server started");
+            while (true) {
+                Socket socket = serverSocket.accept();
+                clients.add(socket);
+                System.out.println("Client connected");
+                new Thread(new ClientHandler(socket)).start();
+            }
         }
     }
 
-    public void acceptClient() throws IOException {
-        Client = serverSocket.accept();
-        System.out.println("connexion established");
-        clientSockets.add(Client);
-    }
+    static class ClientHandler implements Runnable {
+        private final Socket socket;
+        private final BufferedReader in;
+        private final PrintWriter out;
 
-    public void receivedMessage() throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(Client.getInputStream()));
-        String line = bufferedReader.readLine();
-        System.out.println(line);
-    }
+        public ClientHandler(Socket socket) throws IOException {
+            this.socket = socket;
+            this.in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            this.out = new PrintWriter(socket.getOutputStream(), true);
+        }
 
-    public void SendMessage(String message) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(Client.getOutputStream()));
-        bufferedWriter.write(message);
-        bufferedWriter.newLine();
-        bufferedWriter.flush();
+        @Override
+        public void run() {
+            String str;
+            try {
+                while (true) {
+                    str = in.readLine();
+                    System.out.println(str);
+                    for (Socket client : clients) {
+                        if (client != socket) {
+                            PrintWriter out = new PrintWriter(client.getOutputStream(), true);
+                            out.println(str);
+                        }
+                    }
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
