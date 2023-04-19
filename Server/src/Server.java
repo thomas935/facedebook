@@ -79,6 +79,18 @@ class Server {
 
                 String line;
                 while ((line = in.readLine()) != null) {
+                    System.out.println("Received from client: " + line);
+                    //verify the first word received from client
+                    String[] words = line.split(" ");
+                    if (words[0].equals("connexion")) {
+                        String username = words[1];
+                        String password = words[2];
+                        if (Database.identification("SELECT*FROM `User` WHERE Login ='" +username+"' AND Password = '"+password+"'")) {
+                            out.println("connexion ok");
+                        } else {
+                            out.println("connexion ko");
+                        }
+                    }
 
                     // writing the received message from
                     // client

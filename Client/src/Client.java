@@ -28,7 +28,6 @@ class Client {
             String line = null;
 
             while (!"exit".equalsIgnoreCase(line)) {
-                Login login = new Login("Login",out);
 
                 // reading from user
                 line = sc.nextLine();
