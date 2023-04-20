@@ -5,7 +5,7 @@ import java.util.*;
 
 // Client class
 class Client {
-
+    private static ArrayList<messagerieFacedeBook> messagerieFacedeBooks = new ArrayList<>();
     // driver code
     public static void main(String[] args)
     {
@@ -34,9 +34,16 @@ class Client {
                 String[] words = line.split(" ");
                 if (Objects.equals(words[0], "connexion")){
                     System.out.println("Connection established");
-                    new messagerieFacedeBook(out);
+                    messagerieFacedeBooks.add(new messagerieFacedeBook(out));
                 }
                 else if (Objects.equals(words[0], "message")){
+                    StringBuilder message = new StringBuilder();
+                    for (int i = 1; i < words.length; i++) {
+                        message.append(words[i]).append(" ");
+                    }
+                    for (messagerieFacedeBook messagerieFacedeBook : messagerieFacedeBooks) {
+                        messagerieFacedeBook.displayMessage(message);
+                    }
 
                 }
                 else{
