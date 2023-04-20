@@ -31,10 +31,15 @@ class Client {
 
                 // reading from user
                 line = in.readLine();
-                if (Objects.equals(line, "1")){
+                String[] words = line.split(" ");
+                if (Objects.equals(words[0], "connexion")){
                     System.out.println("Connection established");
                     new messagerieFacedeBook(out);
-                }else{
+                }
+                else if (Objects.equals(words[0], "message")){
+
+                }
+                else{
                     JOptionPane.showMessageDialog(null, "Identifiants invalides.");
                 }
 

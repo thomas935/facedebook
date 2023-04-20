@@ -86,13 +86,18 @@ class Server {
                         String username = words[1];
                         String password = words[2];
                         if (Database.identification("SELECT*FROM `User` WHERE Login ='" +username+"' AND Password = '"+password+"'")) {
-                            out.println("1");
-                        } else {
+                            out.println("connexion");
+                        }                        else {
                             out.println("0");
                         }
                     }
-
-
+                    else if (words[0].equals("message")){
+                        StringBuilder message = new StringBuilder();
+                        for (int i = 1; i < words.length; i++) {
+                            message.append(words[i]+" ");
+                        }
+                        out.println("message " + message);
+                    }
                 }
             }
             catch (IOException e) {
