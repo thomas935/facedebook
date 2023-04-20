@@ -11,6 +11,7 @@ public class Login extends JFrame {
     private JButton loginButton;
     private JLabel UserName;
     private JLabel PassWord;
+    private JButton databaseButton;
     private PrintWriter out;
 
 
@@ -31,6 +32,7 @@ public class Login extends JFrame {
                 passwordField1.setText("");
             }
         });
+
     }
 }
 

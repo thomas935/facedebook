@@ -9,6 +9,11 @@ public class Database {
     private static String url = "jdbc:mysql://" + host + ":" + port + "/";
     public static Connection connection = null;
 
+
+
+
+
+
     public static void connect() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -51,7 +56,8 @@ public class Database {
                 System.out.println();
             }
         } catch (Exception e) {
-            System.out.println(e.getMessage());;
+            System.out.println(e.getMessage());
+            ;
         } finally {
             try {
                 if (statement != null)
@@ -62,20 +68,20 @@ public class Database {
         }
     }
 
-    public static Boolean identification(String request){
+    public static Boolean identification(String request) {
         Statement statement = null;
-        try{
+        try {
             statement = connection.createStatement();
             ResultSet result = statement.executeQuery(request);
-            if (result.next()){
+            if (result.next()) {
                 return true;
             } else {
                 return false;
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             return false;
-        }finally {
+        } finally {
             try {
                 if (statement != null)
                     statement.close();
@@ -125,4 +131,28 @@ public class Database {
             throw new RuntimeException(e);
         }
     }
+
+    public static String getDatabase(String request){
+        Statement statement = null;
+        try {
+            statement = connection.createStatement();
+            ResultSet result = statement.executeQuery(request);
+            if (result.next()) {
+                return result.getString(1);
+            } else {
+                return null;
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
+        } finally {
+            try {
+                if (statement != null)
+                    statement.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 }

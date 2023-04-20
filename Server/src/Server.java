@@ -1,5 +1,10 @@
 import java.io.*;
 import java.net.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Objects;
+
+import static java.lang.Integer.parseInt;
 
 // Server class
 class Server {
@@ -74,6 +79,8 @@ class Server {
 
         public void run()
         {
+            LocalDateTime myDateObj;
+
             PrintWriter out = null;
             BufferedReader in = null;
             try {
@@ -95,9 +102,17 @@ class Server {
                     if (words[0].equals("connexion")) {
                         String username = words[1];
                         String password = words[2];
-                        if (Database.identification("SELECT*FROM `User` WHERE Login ='" +username+"' AND Password = '"+password+"'")) {
-                            out.println("connexion");
-                        }                        else {
+                        if (Database.identification("SELECT*FROM `User` WHERE USERNAME ='" +username+"' AND PASSWORD = '"+password+"'")) {
+                            out.println("connexion "+username+" "+password);
+                            // create localtime variable
+                            myDateObj = LocalDateTime.now();
+                            DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+                            String formattedDate = myDateObj.format(myFormatObj);
+                            // insert the connection in the database
+                            int USER_ID = Integer.parseInt(Objects.requireNonNull(Database.getDatabase("SELECT ID FROM `User` WHERE USERNAME ='" +username+"' AND PASSWORD = '"+password+"'"))) ;
+                            Database.queryUpdate("INSERT INTO `log`(`USER_ID`, `TIMESTAMP`, `TYPE`) VALUES ('"+USER_ID+"','"+formattedDate+"' ,'connexion')");
+
+                        }else {
                             out.println("0");
                         }
                     }
@@ -107,6 +122,31 @@ class Server {
                             message.append(words[i]+" ");
                         }
                         out.println("message " + message);
+                        // create localtime variable
+                        myDateObj = LocalDateTime.now();
+                        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+                        String formattedDate = myDateObj.format(myFormatObj);
+                        // insert the message in the database
+
+                        int USER_ID = Integer.parseInt(Objects.requireNonNull(Database.getDatabase("SELECT ID FROM `User` WHERE USERNAME ='" +words[1]+"' AND PASSWORD = '"+words[2]+"'"))) ;
+                        Database.queryUpdate("INSERT INTO `log`(`USER_ID`, `TIMESTAMP`, `TYPE`) VALUES ('"+USER_ID+"','"+formattedDate+"' ,'message')");
+                    }
+                    /*
+                    else if (words[0].equals("inscription")){
+                        String username = words[1];
+                        String password = words[2];
+                        if (Database.identification("SELECT*FROM `User` WHERE Login ='" +username+"' AND Password = '"+password+"'")) {
+                            out.println("0");
+                        }
+                        else {
+                            Database.insert("INSERT INTO `User`(`Login`, `Password`) VALUES ('"+username+"','"+password+"')");
+                            out.println("inscription");
+                        }
+                    }*/
+
+
+                    else if (words[0].equals("exit")){
+                        break;
                     }
                 }
             }

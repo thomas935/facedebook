@@ -24,30 +24,31 @@ public class messagerieFacedeBook extends JFrame {
     private JLabel Etat2;
     private JLabel Etat3;
     private JLabel Etat4;
-    private PrintWriter out;
-    private String line;
 
 
-    public messagerieFacedeBook(PrintWriter out) throws IOException  {
+
+
+    public messagerieFacedeBook(PrintWriter out, String username,String password) throws IOException  {
 
             JFrame frame = new JFrame();
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setSize(800, 600);
             frame.setVisible(true);
             frame.setContentPane(panel1);
-            this.out = out;
+
 
         textField1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String message = textField1.getText();
-                out.println("message "+message) ;
+                out.println("message "+username+" "+password+" "+message) ;
                 textField1.setText("");
             }
         });
     }
 
     public void displayMessage(StringBuilder message){
+
         if (!TextOut3.getText().equals("")){
             TextOut4.setText(TextOut3.getText());
         }
@@ -63,7 +64,5 @@ public class messagerieFacedeBook extends JFrame {
         TextOut0.setText(String.valueOf(message));
         textField1.setText("");
     }
-
-
 }
 
