@@ -5,8 +5,8 @@ public class Database {
     private static final String port = "3306";
     private static final String user = "root";
     private static final String password = "";
-    private static final String database = "Test";
-    private static final String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
+    private static String database = "Facedebook";
+    private static String url = "jdbc:mysql://" + host + ":" + port + "/";
     public static Connection connection = null;
 
     public static void connect() {
@@ -100,6 +100,29 @@ public class Database {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    public static void CreateDatabase(String[] request){
+
+
+        Statement statement = null;
+        String[] word = request[0].split(" ");
+
+        try {
+            connection = DriverManager.getConnection(url, user, password);
+            statement = connection.createStatement();
+            statement.execute(request[0]);
+            database = word[word.length-1];
+            url = url + database;
+            statement.close();
+            connection = DriverManager.getConnection(url, user, password);
+            statement = connection.createStatement();
+            for (int i = 1; i < request.length; i++) {
+                statement.execute(request[i]);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 }

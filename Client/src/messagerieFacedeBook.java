@@ -29,6 +29,7 @@ public class messagerieFacedeBook extends JFrame {
 
 
     public messagerieFacedeBook(PrintWriter out) throws IOException  {
+
             JFrame frame = new JFrame();
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setSize(800, 600);
@@ -41,6 +42,7 @@ public class messagerieFacedeBook extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String message = textField1.getText();
                 out.println("message "+message) ;
+                textField1.setText("");
             }
         });
     }
