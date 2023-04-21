@@ -1,10 +1,8 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Objects;
 
 public class messagerieFacedeBook extends JFrame {
     private JPanel panel1;
@@ -20,11 +18,25 @@ public class messagerieFacedeBook extends JFrame {
     private JLabel Pseudo3;
     private JLabel Pseudo4;
     private JLabel Etat0;
-    private JLabel Etat1;
-    private JLabel Etat2;
-    private JLabel Etat3;
+    private JLabel STATUT3;
+    private JLabel STATUT2;
+    private JLabel STATUT1;
     private JLabel Etat4;
     private JButton OPTIONButton;
+    private JPanel STATUT0;
+    private JPanel STATUT4;
+    private JPanel STATUT5;
+    private JButton DECONNEXIONButton;
+    private JLabel USERNAME0;
+    private JLabel HEURE0;
+    private JLabel HEURE1;
+    private JLabel HEURE2;
+    private JLabel HEURE3;
+    private JLabel HEURE4;
+    private JLabel USERNAME1;
+    private JLabel USERNAME2;
+    private JLabel USERNAME3;
+    private JLabel USERNAME4;
     private PrintWriter out;
 
     public messagerieFacedeBook(PrintWriter out, String username,String password) throws IOException  {

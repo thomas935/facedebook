@@ -9,8 +9,6 @@ public class Login extends JFrame {
     private JTextField UsernameText;
     private JPasswordField passwordField1;
     private JButton loginButton;
-    private JLabel UserName;
-    private JLabel PassWord;
     private JButton databaseButton;
     private PrintWriter out;
 
@@ -19,7 +17,7 @@ public class Login extends JFrame {
         // create a frame and get username and password
         JFrame frame = new JFrame(windowLogin);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(800, 600);
+        frame.setSize(1200, 900);
         frame.setVisible(true);
         frame.setContentPane(panel1);
         this.out = out;
