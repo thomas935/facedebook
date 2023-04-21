@@ -115,7 +115,7 @@ class Server {
                             message.append(words[i]+" ");
                         }
                         out.println("message " + message);
-                        Database.LogMessage(words[1],words[2]);
+                        Database.LogMessage(message,words[1],words[2]);
                     }
                     /*
                     else if (words[0].equals("inscription")){

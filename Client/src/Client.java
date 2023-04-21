@@ -47,7 +47,6 @@ class Client {
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Identifiants invalides.");
-
                 }
             }
         }
