@@ -1,4 +1,7 @@
 import java.sql.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 public class Database {
     private static final String host = "localhost";
@@ -110,8 +113,6 @@ public class Database {
     }
 
     public static void CreateDatabase(String[] request){
-
-
         Statement statement = null;
         String[] word = request[0].split(" ");
 
@@ -153,6 +154,25 @@ public class Database {
                 e.printStackTrace();
             }
         }
+    }
+
+
+    public static void LogConnexion(String username, String password){
+        LocalDateTime myDateObj;
+        myDateObj = LocalDateTime.now();
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String formattedDate = myDateObj.format(myFormatObj);
+        // insert the connection in the database
+        int USER_ID = Integer.parseInt(Objects.requireNonNull(Database.getDatabase("SELECT ID FROM `User` WHERE USERNAME ='" +username+"' AND PASSWORD = '"+password+"'"))) ;
+        Database.queryUpdate("INSERT INTO `log`(`USER_ID`, `TIMESTAMP`, `TYPE`) VALUES ('"+USER_ID+"','"+formattedDate+"' ,'connexion')");
+    }
+    public static void LogMessage(String username, String password){
+        LocalDateTime myDateObj;
+        myDateObj = LocalDateTime.now();
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String formattedDate = myDateObj.format(myFormatObj);
+        int USER_ID = Integer.parseInt(Objects.requireNonNull(Database.getDatabase("SELECT ID FROM `User` WHERE USERNAME ='" +username+"' AND PASSWORD = '"+password+"'"))) ;
+        Database.queryUpdate("INSERT INTO `log`(`USER_ID`, `TIMESTAMP`, `TYPE`) VALUES ('"+USER_ID+"','"+formattedDate+"' ,'message')");
     }
 
 }

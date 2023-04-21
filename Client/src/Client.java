@@ -37,7 +37,7 @@ class Client {
                 }
                 else if (Objects.equals(words[0], "message")){
                     StringBuilder message = new StringBuilder();
-                    for (int i = 3; i < words.length; i++) {
+                    for (int i = 1; i < words.length; i++) {
                         message.append(words[i]).append(" ");
                     }
                     for (messagerieFacedeBook messagerieFacedeBook : messagerieFacedeBooks) {

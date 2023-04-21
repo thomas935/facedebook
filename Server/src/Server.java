@@ -79,7 +79,7 @@ class Server {
 
         public void run()
         {
-            LocalDateTime myDateObj;
+
 
             PrintWriter out = null;
             BufferedReader in = null;
@@ -104,32 +104,18 @@ class Server {
                         String password = words[2];
                         if (Database.identification("SELECT*FROM `User` WHERE USERNAME ='" +username+"' AND PASSWORD = '"+password+"'")) {
                             out.println("connexion "+username+" "+password);
-                            // create localtime variable
-                            myDateObj = LocalDateTime.now();
-                            DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-                            String formattedDate = myDateObj.format(myFormatObj);
-                            // insert the connection in the database
-                            int USER_ID = Integer.parseInt(Objects.requireNonNull(Database.getDatabase("SELECT ID FROM `User` WHERE USERNAME ='" +username+"' AND PASSWORD = '"+password+"'"))) ;
-                            Database.queryUpdate("INSERT INTO `log`(`USER_ID`, `TIMESTAMP`, `TYPE`) VALUES ('"+USER_ID+"','"+formattedDate+"' ,'connexion')");
-
+                            Database.LogConnexion(username,password);
                         }else {
                             out.println("0");
                         }
                     }
                     else if (words[0].equals("message")){
                         StringBuilder message = new StringBuilder();
-                        for (int i = 1; i < words.length; i++) {
+                        for (int i = 3; i < words.length; i++) {
                             message.append(words[i]+" ");
                         }
                         out.println("message " + message);
-                        // create localtime variable
-                        myDateObj = LocalDateTime.now();
-                        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-                        String formattedDate = myDateObj.format(myFormatObj);
-                        // insert the message in the database
-
-                        int USER_ID = Integer.parseInt(Objects.requireNonNull(Database.getDatabase("SELECT ID FROM `User` WHERE USERNAME ='" +words[1]+"' AND PASSWORD = '"+words[2]+"'"))) ;
-                        Database.queryUpdate("INSERT INTO `log`(`USER_ID`, `TIMESTAMP`, `TYPE`) VALUES ('"+USER_ID+"','"+formattedDate+"' ,'message')");
+                        Database.LogMessage(words[1],words[2]);
                     }
                     /*
                     else if (words[0].equals("inscription")){
