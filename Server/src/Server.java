@@ -2,6 +2,7 @@ import java.io.*;
 import java.net.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 import java.util.Objects;
 
 import static java.lang.Integer.parseInt;
@@ -117,18 +118,11 @@ class Server {
                         out.println("message " + message);
                         Database.LogMessage(message,words[1],words[2]);
                     }
-                    /*
-                    else if (words[0].equals("inscription")){
-                        String username = words[1];
-                        String password = words[2];
-                        if (Database.identification("SELECT*FROM `User` WHERE Login ='" +username+"' AND Password = '"+password+"'")) {
-                            out.println("0");
-                        }
-                        else {
-                            Database.insert("INSERT INTO `User`(`Login`, `Password`) VALUES ('"+username+"','"+password+"')");
-                            out.println("inscription");
-                        }
-                    }*/
+                    else if (words[0].equals("getdata")){
+                        String[][] result = Database.query("SELECT * FROM `User`");
+                        out.println("getdata "+ Arrays.deepToString(result));
+                        System.out.println("database "+ Arrays.deepToString(result));
+                    }
 
 
                     else if (words[0].equals("exit")){

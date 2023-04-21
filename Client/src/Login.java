@@ -22,6 +22,8 @@ public class Login extends JFrame {
         frame.setContentPane(panel1);
         this.out = out;
 
+
+
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -30,6 +32,13 @@ public class Login extends JFrame {
                 passwordField1.setText("");
             }
         });
+        databaseButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                out.println("getdata");
+            }
+        });
+
 
     }
 }

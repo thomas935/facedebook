@@ -45,6 +45,9 @@ class Client {
                         messagerieFacedeBook.displayMessage(message);
                     }
                 }
+                else if (Objects.equals(words[0], "getdata")){
+                    new test_data();
+                }
                 else{
                     JOptionPane.showMessageDialog(null, "Identifiants invalides.");
                 }

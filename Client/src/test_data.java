@@ -1,16 +1,18 @@
 import javax.swing.*;
-import java.awt.*;
 
-public class test_data {
-    private JPanel panel1;
+public class test_data extends JFrame {
+    JPanel Panel1;
     private JTable table1;
 
-    public static void main(String[] args) {
-        final JFrame frame = new JFrame("JTable Demo");
-
+    public  test_data() {
+        JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 300);
+        frame.setSize(800, 600);
         frame.setVisible(true);
-        frame.setContentPane(new test_data().panel1);
+        frame.setContentPane(Panel1);
     }
+    public void getdata(StringBuilder data){
+        String.valueOf(data);
+    }
+
 }

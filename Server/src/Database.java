@@ -37,27 +37,34 @@ public class Database {
         }
     }
 
-    public static void query(String request) {
+    public static String[][] query(String request) {
         Statement statement = null;
-
+        int index=0;
         try {
             statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(request);
 
             ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
             int columnCount = resultSetMetaData.getColumnCount();
+            String[][] data = new String[columnCount][];
 
-            for (int i = 1; i <= columnCount; i++) {
-                System.out.print(resultSetMetaData.getColumnName(i) + "\t");
+
+            for (int j = 1; j <= columnCount; j++) {
+                System.out.print(resultSetMetaData.getColumnName(j) + "\t");
+
             }
             System.out.println();
-
             while (resultSet.next()) {
+
                 for (int i = 1; i <= columnCount; i++) {
                     System.out.print(resultSet.getString(i) + "\t");
+                    data[index] = resultSet.getString(i).split(" ");
                 }
                 System.out.println();
+                index++;
             }
+            return data;
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
             ;
@@ -68,7 +75,7 @@ public class Database {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }
+        }return null;
     }
 
     public static Boolean identification(String request) {
