@@ -24,9 +24,8 @@ public class messagerieFacedeBook extends JFrame {
     private JLabel Etat2;
     private JLabel Etat3;
     private JLabel Etat4;
-
-
-
+    private JButton OPTIONButton;
+    private PrintWriter out;
 
     public messagerieFacedeBook(PrintWriter out, String username,String password) throws IOException  {
 
