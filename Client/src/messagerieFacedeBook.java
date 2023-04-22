@@ -54,7 +54,7 @@ public class messagerieFacedeBook extends JFrame {
     private JLabel Statut11;
     private JLabel Statut12;
     private JLabel Statut13;
-    private JLabel Statut14;
+
 
 
     public messagerieFacedeBook(PrintWriter out, String username, String password) throws IOException {
@@ -134,8 +134,8 @@ public class messagerieFacedeBook extends JFrame {
 
     }
 
-    public void Statut(StringBuilder statut) {
-        for (int i = 0; i < 15; i++) {
+    public void Statut(String statut) {
+        for (int i = 0; i < statut.length(); i++) {
             if (statut.charAt(i) == '1') {
                 switch (i) {
                     case 0:
@@ -180,9 +180,7 @@ public class messagerieFacedeBook extends JFrame {
                     case 13:
                         Statut13.setText("En ligne");
                         break;
-                    case 14:
-                        Statut14.setText("En ligne");
-                        break;
+
                 }
             } else {
                 switch (i) {
@@ -219,6 +217,16 @@ public class messagerieFacedeBook extends JFrame {
                     case 10:
                         Statut10.setText("Hors ligne");
                         break;
+                    case 11:
+                        Statut11.setText("Hors ligne");
+                        break;
+                    case 12:
+                        Statut12.setText("Hors ligne");
+                        break;
+                    case 13:
+                        Statut13.setText("Hors ligne");
+                        break;
+
                 }
             }
         }

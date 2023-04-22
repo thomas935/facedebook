@@ -37,10 +37,10 @@ class Client {
                 if (Objects.equals(words[0], "connexion")){
                     System.out.println("Connection established");
                     messagerieFacedeBooks.add(new messagerieFacedeBook(out,words[1],words[2]));
-                    StringBuilder status = new StringBuilder();
+
 
                     for (messagerieFacedeBook messagerieFacedeBook : messagerieFacedeBooks) {
-                        messagerieFacedeBook.Statut(status);
+                        messagerieFacedeBook.Statut(words[3]);
                     }
                 }
                 else if (Objects.equals(words[0], "message")){
