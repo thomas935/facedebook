@@ -119,9 +119,9 @@ class Server {
                         Database.LogMessage(message,words[1],words[2]);
                     }
                     else if (words[0].equals("getdata")){
-                        String[][] result = Database.query("SELECT * FROM `User`");
-                        out.println("getdata "+ Arrays.deepToString(result));
-                        System.out.println("database "+ Arrays.deepToString(result));
+                        String[][] result = Database.query("SELECT * FROM `log`");
+                        //out.println("getdata "+ Arrays.deepToString(result));
+                        //System.out.println("database "+ Arrays.deepToString(result));
                     }
 
 

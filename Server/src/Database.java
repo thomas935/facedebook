@@ -1,6 +1,7 @@
 import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 import java.util.Objects;
 
 public class Database {
@@ -46,19 +47,26 @@ public class Database {
 
             ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
             int columnCount = resultSetMetaData.getColumnCount();
-            String[][] data = new String[columnCount][];
+            // get number of rows
+            resultSet.last();
+            int rowCount = resultSet.getRow();
+            resultSet.beforeFirst();
+
+            String[][] data = new String[rowCount][columnCount];
 
 
             for (int j = 1; j <= columnCount; j++) {
                 System.out.print(resultSetMetaData.getColumnName(j) + "\t");
 
             }
+            String verification;
             System.out.println();
             while (resultSet.next()) {
 
                 for (int i = 1; i <= columnCount; i++) {
                     System.out.print(resultSet.getString(i) + "\t");
-                    data[index] = resultSet.getString(i).split(" ");
+                    verification = Arrays.toString(resultSet.getString(i).split(" "));
+                    data[index][i-1] = Arrays.toString(resultSet.getString(i).split(" "));
                 }
                 System.out.println();
                 index++;
