@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
@@ -152,45 +153,59 @@ public class messagerieFacedeBook extends JFrame {
             if (statut.charAt(i) == '1') {
                 switch (i) {
                     case 0:
+                        Statut0.setForeground(Color.GREEN);
                         Statut0.setText("En ligne");
                         break;
                     case 1:
+                        Statut1.setForeground(Color.GREEN);
                         Statut1.setText("En ligne");
                         break;
                     case 2:
+                        Statut2.setForeground(Color.GREEN);
                         Statut2.setText("En ligne");
                         break;
                     case 3:
+                        Statut3.setForeground(Color.GREEN);
                         Statut3.setText("En ligne");
                         break;
                     case 4:
+                        Statut4.setForeground(Color.GREEN);
                         Statut4.setText("En ligne");
                         break;
                     case 5:
+                        Statut5.setForeground(Color.GREEN);
                         Statut5.setText("En ligne");
                         break;
                     case 6:
+                        Statut6.setForeground(Color.GREEN);
                         Statut6.setText("En ligne");
                         break;
                     case 7:
+                        Statut7.setForeground(Color.GREEN);
                         Statut7.setText("En ligne");
                         break;
                     case 8:
+                        Statut8.setForeground(Color.GREEN);
                         Statut8.setText("En ligne");
                         break;
                     case 9:
+                        Statut9.setForeground(Color.GREEN);
                         Statut9.setText("En ligne");
                         break;
                     case 10:
+                        Statut10.setForeground(Color.GREEN);
                         Statut10.setText("En ligne");
                         break;
                     case 11:
+                        Statut11.setForeground(Color.GREEN);
                         Statut11.setText("En ligne");
                         break;
                     case 12:
+                        Statut12.setForeground(Color.GREEN);
                         Statut12.setText("En ligne");
                         break;
                     case 13:
+                        Statut13.setForeground(Color.GREEN);
                         Statut13.setText("En ligne");
                         break;
 
@@ -198,45 +213,59 @@ public class messagerieFacedeBook extends JFrame {
             } else {
                 switch (i) {
                     case 0:
+                        Statut0.setForeground(Color.RED);
                         Statut0.setText("Hors ligne");
                         break;
                     case 1:
+                        Statut1.setForeground(Color.RED);
                         Statut1.setText("Hors ligne");
                         break;
                     case 2:
+                        Statut2.setForeground(Color.RED);
                         Statut2.setText("Hors ligne");
                         break;
                     case 3:
+                        Statut3.setForeground(Color.RED);
                         Statut3.setText("Hors ligne");
                         break;
                     case 4:
+                        Statut4.setForeground(Color.RED);
                         Statut4.setText("Hors ligne");
                         break;
                     case 5:
+                        Statut5.setForeground(Color.RED);
                         Statut5.setText("Hors ligne");
                         break;
                     case 6:
+                        Statut6.setForeground(Color.RED);
                         Statut6.setText("Hors ligne");
                         break;
                     case 7:
+                        Statut7.setForeground(Color.RED);
                         Statut7.setText("Hors ligne");
                         break;
                     case 8:
+                        Statut8.setForeground(Color.RED);
                         Statut8.setText("Hors ligne");
                         break;
                     case 9:
+                        Statut9.setForeground(Color.RED);
                         Statut9.setText("Hors ligne");
                         break;
                     case 10:
+                        Statut10.setForeground(Color.RED);
                         Statut10.setText("Hors ligne");
                         break;
                     case 11:
+                        Statut11.setForeground(Color.RED);
                         Statut11.setText("Hors ligne");
                         break;
                     case 12:
+                        Statut12.setForeground(Color.RED);
                         Statut12.setText("Hors ligne");
                         break;
                     case 13:
+                        Statut13.setForeground(Color.RED);
                         Statut13.setText("Hors ligne");
                         break;
 
