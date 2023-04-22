@@ -17,11 +17,11 @@ public class messagerieFacedeBook extends JFrame {
     private JLabel Pseudo2;
     private JLabel Pseudo3;
     private JLabel Pseudo4;
-    private JLabel Etat0;
-    private JLabel STATUT3;
-    private JLabel STATUT2;
-    private JLabel STATUT1;
-    private JLabel Etat4;
+    private JLabel Statut0;
+    private JLabel Statut1;
+    private JLabel Statut2;
+    private JLabel Statut3;
+    private JLabel Statut4;
     private JButton OPTIONButton;
     private JPanel STATUT0;
     private JPanel STATUT4;
@@ -36,6 +36,26 @@ public class messagerieFacedeBook extends JFrame {
     private JLabel USERNAME2;
     private JLabel USERNAME1;
     private JLabel USERNAME0;
+    private JLabel Pseudo5;
+    private JLabel Pseudo6;
+    private JLabel Pseudo7;
+    private JLabel Pseudo8;
+    private JLabel Pseudo9;
+    private JLabel Pseudo10;
+    private JLabel Pseudo11;
+    private JLabel Pseudo12;
+    private JLabel Pseudo13;
+    private JLabel Pseudo14;
+    private JLabel Statut5;
+    private JLabel Statut6;
+    private JLabel Statut7;
+    private JLabel Statut8;
+    private JLabel Statut9;
+    private JLabel Statut10;
+    private JLabel Statut11;
+    private JLabel Statut12;
+    private JLabel Statut13;
+    private JLabel Statut14;
 
 
     public messagerieFacedeBook(PrintWriter out, String username,String password) throws IOException  {
