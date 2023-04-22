@@ -17,7 +17,7 @@ public class Login extends JFrame {
         // create a frame and get username and password
         JFrame frame = new JFrame(windowLogin);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1200, 900);
+        frame.setSize(600, 450);
         frame.setVisible(true);
         frame.setContentPane(panel1);
         this.out = out;
