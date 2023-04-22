@@ -25,7 +25,6 @@ public class messagerieFacedeBook extends JFrame {
     private JButton OPTIONButton;
     private JPanel STATUT0;
     private JPanel STATUT4;
-    private JPanel STATUT5;
     private JButton DECONNEXIONButton;
     private JLabel USERNAME4;
     private JLabel HEURE4;
