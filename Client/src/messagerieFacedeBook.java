@@ -45,7 +45,6 @@ public class messagerieFacedeBook extends JFrame {
     private JLabel Pseudo11;
     private JLabel Pseudo12;
     private JLabel Pseudo13;
-    private JLabel Pseudo14;
     private JLabel Statut5;
     private JLabel Statut6;
     private JLabel Statut7;
