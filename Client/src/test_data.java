@@ -9,7 +9,7 @@ public class test_data extends JFrame {
     public  test_data() {
 
         JFrame frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setSize(800, 600);
         frame.setVisible(true);
         frame.setContentPane(Panel1);
