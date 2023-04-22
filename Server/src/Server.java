@@ -123,12 +123,15 @@ class Server {
                     }
                     else if (words[0].equals("getdata")){
                         String[][] result = Database.recoltData("SELECT * FROM `log`");
-                        //out.println("getdata "+ Arrays.deepToString(result));
+                        out.println("getdata "+ Arrays.deepToString(result));
                         //System.out.println("database "+ Arrays.deepToString(result));
                     }
                     else if (words[0].equals("deconnexion")) {
                         Database.LogDeconnexion(words[1],words[2]);
+
                     } else if (words[0].equals("exit")){
+                        Database.queryUpdate("DROP TABLE user, message, log");
+                        out.println("exit");
                         break;
                     }
                 }

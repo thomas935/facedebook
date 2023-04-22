@@ -41,7 +41,7 @@ public class messagerieFacedeBook extends JFrame {
 
     public messagerieFacedeBook(PrintWriter out, String username,String password) throws IOException  {
         JFrame frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setSize(800, 600);
         frame.setVisible(true);
         frame.setContentPane(panel1);

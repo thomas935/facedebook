@@ -4,6 +4,8 @@ import java.net.*;
 import java.util.*;
 import javax.swing.*;
 
+
+
 // Client class
 class Client {
     private static ArrayList<messagerieFacedeBook> messagerieFacedeBooks = new ArrayList<>();
@@ -48,6 +50,7 @@ class Client {
                 }
                 else if (Objects.equals(words[0], "getdata")){
                     new test_data();
+
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Identifiants invalides.");
