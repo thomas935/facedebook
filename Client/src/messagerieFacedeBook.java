@@ -3,6 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDateTime;
 
 public class messagerieFacedeBook extends JFrame {
     private JPanel panel1;
@@ -58,8 +59,7 @@ public class messagerieFacedeBook extends JFrame {
         });
     }
 
-    public void displayMessage(StringBuilder message){
-
+    public void displayMessage(StringBuilder message, String localDateTime, String Username){
         if (!TextOut3.getText().equals("")){
             TextOut4.setText(TextOut3.getText());
         }
@@ -74,6 +74,8 @@ public class messagerieFacedeBook extends JFrame {
         }
         TextOut0.setText(String.valueOf(message));
         textField1.setText("");
+
+
     }
 }
 

@@ -2,6 +2,7 @@ import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Objects;
 
 public class Database {
@@ -38,7 +39,7 @@ public class Database {
         }
     }
 
-    public static String[][] query(String request) {
+    public static String[][] recoltData(String request) {
         Statement statement = null;
         int index=0;
         try {
@@ -76,6 +77,26 @@ public class Database {
         } catch (Exception e) {
             System.out.println(e.getMessage());
             ;
+        } finally {
+            try {
+                if (statement != null)
+                    statement.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }return null;
+    }
+    public static String query(String request) {
+        Statement statement = null;
+        try {
+            statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(request);
+            resultSet.next();
+            String data = resultSet.getString(1);
+            return data;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+
         } finally {
             try {
                 if (statement != null)
@@ -181,7 +202,8 @@ public class Database {
         int USER_ID = Integer.parseInt(Objects.requireNonNull(Database.getDatabase("SELECT ID FROM `User` WHERE USERNAME ='" +username+"' AND PASSWORD = '"+password+"'"))) ;
         Database.queryUpdate("INSERT INTO `log`(`USER_ID`, `TIMESTAMP`, `TYPE`) VALUES ('"+USER_ID+"','"+formattedDate+"' ,'connexion')");
     }
-    public static void LogMessage(StringBuilder message,String username, String password){
+    public static String[] LogMessage(StringBuilder message, String username, String password){
+        String[] informationMessage = new String[2];
         LocalDateTime myDateObj;
         myDateObj = LocalDateTime.now();
         DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -189,6 +211,12 @@ public class Database {
         int USER_ID = Integer.parseInt(Objects.requireNonNull(Database.getDatabase("SELECT ID FROM `User` WHERE USERNAME ='" +username+"' AND PASSWORD = '"+password+"'"))) ;
         Database.queryUpdate("INSERT INTO `log`(`USER_ID`, `TIMESTAMP`, `TYPE`) VALUES ('"+USER_ID+"','"+formattedDate+"' ,'message')");
         Database.queryUpdate("INSERT INTO `message`(`USER_ID`, `TIMESTAMP`, `CONTENT`) VALUES ('"+USER_ID+"','"+formattedDate+"','"+message+"')");
+
+        informationMessage[0] = formattedDate;
+        informationMessage[1] = query("SELECT FIRSTNAME FROM user WHERE USERNAME ='" +username+"' AND PASSWORD = '"+password+"'");
+        return informationMessage;
     }
+
+
 
 }

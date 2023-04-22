@@ -3,6 +3,7 @@ import java.net.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Objects;
 
 import static java.lang.Integer.parseInt;
@@ -115,16 +116,15 @@ class Server {
                         for (int i = 3; i < words.length; i++) {
                             message.append(words[i]+" ");
                         }
-                        out.println("message " + message);
-                        Database.LogMessage(message,words[1],words[2]);
+                        String[] informationMessage;
+                        informationMessage = Database.LogMessage(message,words[1],words[2]);
+                        out.println("message " +informationMessage[0]+" "+informationMessage[1]+ message);
                     }
                     else if (words[0].equals("getdata")){
-                        String[][] result = Database.query("SELECT * FROM `log`");
+                        String[][] result = Database.recoltData("SELECT * FROM `log`");
                         //out.println("getdata "+ Arrays.deepToString(result));
                         //System.out.println("database "+ Arrays.deepToString(result));
                     }
-
-
                     else if (words[0].equals("exit")){
                         break;
                     }
