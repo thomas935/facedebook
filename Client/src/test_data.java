@@ -5,6 +5,7 @@ public class test_data extends JFrame {
     private JTable table1;
 
     public  test_data() {
+
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800, 600);

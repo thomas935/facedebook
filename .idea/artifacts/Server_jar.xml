@@ -3,9 +3,12 @@
     <output-path>$PROJECT_DIR$/out/artifacts/Server_jar</output-path>
     <root id="root">
       <element id="archive" name="Server.jar">
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$USER_HOME$/Downloads/mysql-connector-java-5.1.49/META-INF/MANIFEST.MF" />
+        </element>
         <element id="module-output" name="Server" />
       </element>
-      <element id="file-copy" path="$USER_HOME$/Desktop/3eme ANNEE/Semestre 6/Java/mysql-connector-java-5.1.49/mysql-connector-java-5.1.49/mysql-connector-java-5.1.49.jar" />
+      <element id="file-copy" path="$PROJECT_DIR$/lib/mysql-connector-java-5.1.49.jar" />
     </root>
   </artifact>
 </component>

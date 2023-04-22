@@ -3,7 +3,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.time.LocalDateTime;
 
 public class messagerieFacedeBook extends JFrame {
     private JPanel panel1;
@@ -28,16 +27,16 @@ public class messagerieFacedeBook extends JFrame {
     private JPanel STATUT4;
     private JPanel STATUT5;
     private JButton DECONNEXIONButton;
-    private JLabel USERNAME0;
-    private JLabel HEURE0;
-    private JLabel HEURE1;
-    private JLabel HEURE2;
-    private JLabel HEURE3;
-    private JLabel HEURE4;
-    private JLabel USERNAME1;
-    private JLabel USERNAME2;
-    private JLabel USERNAME3;
     private JLabel USERNAME4;
+    private JLabel HEURE4;
+    private JLabel HEURE3;
+    private JLabel HEURE2;
+    private JLabel HEURE1;
+    private JLabel HEURE0;
+    private JLabel USERNAME3;
+    private JLabel USERNAME2;
+    private JLabel USERNAME1;
+    private JLabel USERNAME0;
     private PrintWriter out;
 
     public messagerieFacedeBook(PrintWriter out, String username,String password) throws IOException  {
@@ -74,6 +73,39 @@ public class messagerieFacedeBook extends JFrame {
         }
         TextOut0.setText(String.valueOf(message));
         textField1.setText("");
+
+        // HEURE
+        if (!HEURE3.getText().equals("")){
+            HEURE4.setText(HEURE3.getText());
+        }
+        if (!HEURE2.getText().equals("")){
+            HEURE3.setText(HEURE2.getText());
+        }
+        if (!HEURE1.getText().equals("")){
+            HEURE2.setText(HEURE1.getText());
+        }
+        if (!HEURE0.getText().equals("")){
+            HEURE1.setText(HEURE0.getText());
+        }
+        HEURE0.setText(String.valueOf(localDateTime));
+
+
+        // USERNAME
+        if (!USERNAME3.getText().equals("")){
+            USERNAME4.setText(USERNAME3.getText());
+        }
+        if (!USERNAME2.getText().equals("")){
+            USERNAME3.setText(USERNAME2.getText());
+        }
+        if (!USERNAME1.getText().equals("")){
+            USERNAME2.setText(USERNAME1.getText());
+        }
+        if (!USERNAME0.getText().equals("")){
+            USERNAME1.setText(USERNAME0.getText());
+        }
+        USERNAME0.setText(String.valueOf(Username));
+
+
 
 
     }

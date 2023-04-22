@@ -392,7 +392,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="998d1" class="javax.swing.JLabel" binding="USERNAME0">
+                  <component id="998d1" class="javax.swing.JLabel" binding="USERNAME4">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -402,7 +402,7 @@
                       <text value="pseudo"/>
                     </properties>
                   </component>
-                  <component id="3e60f" class="javax.swing.JLabel" binding="HEURE0">
+                  <component id="3e60f" class="javax.swing.JLabel" binding="HEURE4">
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -434,7 +434,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="64" class="javax.swing.JLabel" binding="USERNAME1">
+                  <component id="64" class="javax.swing.JLabel" binding="USERNAME3">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -444,7 +444,7 @@
                       <text value="pseudo"/>
                     </properties>
                   </component>
-                  <component id="e0d84" class="javax.swing.JLabel" binding="HEURE1">
+                  <component id="e0d84" class="javax.swing.JLabel" binding="HEURE3">
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -532,7 +532,7 @@
                       <toolTipText value=""/>
                     </properties>
                   </component>
-                  <component id="3f8d7" class="javax.swing.JLabel" binding="HEURE3">
+                  <component id="3f8d7" class="javax.swing.JLabel" binding="HEURE1">
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -542,7 +542,7 @@
                       <text value="heure"/>
                     </properties>
                   </component>
-                  <component id="4dfb6" class="javax.swing.JLabel" binding="USERNAME3">
+                  <component id="4dfb6" class="javax.swing.JLabel" binding="USERNAME1">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -565,7 +565,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="9746c" class="javax.swing.JLabel" binding="USERNAME4">
+                  <component id="9746c" class="javax.swing.JLabel" binding="USERNAME0">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -575,7 +575,7 @@
                       <text value="pseudo"/>
                     </properties>
                   </component>
-                  <component id="f16ab" class="javax.swing.JLabel" binding="HEURE4">
+                  <component id="f16ab" class="javax.swing.JLabel" binding="HEURE0">
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
