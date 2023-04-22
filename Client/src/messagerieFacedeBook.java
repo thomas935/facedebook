@@ -37,16 +37,14 @@ public class messagerieFacedeBook extends JFrame {
     private JLabel USERNAME2;
     private JLabel USERNAME1;
     private JLabel USERNAME0;
-    private PrintWriter out;
+
 
     public messagerieFacedeBook(PrintWriter out, String username,String password) throws IOException  {
-
-            JFrame frame = new JFrame();
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setSize(800, 600);
-            frame.setVisible(true);
-            frame.setContentPane(panel1);
-
+        JFrame frame = new JFrame();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(800, 600);
+        frame.setVisible(true);
+        frame.setContentPane(panel1);
 
         textField1.addActionListener(new ActionListener() {
             @Override
@@ -56,6 +54,16 @@ public class messagerieFacedeBook extends JFrame {
                 textField1.setText("");
             }
         });
+
+        DECONNEXIONButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
+                frame.dispose();
+                out.println("deconnexion " +username+" "+password);
+            }
+        });
+
     }
 
     public void displayMessage(StringBuilder message, String localDateTime, String Username){

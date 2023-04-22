@@ -38,11 +38,12 @@ class Client {
                 }
                 else if (Objects.equals(words[0], "message")){
                     StringBuilder message = new StringBuilder();
-                    for (int i = 3; i < words.length; i++) {
+
+                    for (int i = 4; i < words.length; i++) {
                         message.append(words[i]).append(" ");
                     }
                     for (messagerieFacedeBook messagerieFacedeBook : messagerieFacedeBooks) {
-                        messagerieFacedeBook.displayMessage(message,words[1],words[2]);
+                        messagerieFacedeBook.displayMessage(message,words[2],words[3]);
                     }
                 }
                 else if (Objects.equals(words[0], "getdata")){

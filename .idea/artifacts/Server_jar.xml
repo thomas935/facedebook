@@ -4,7 +4,7 @@
     <root id="root">
       <element id="archive" name="Server.jar">
         <element id="directory" name="META-INF">
-          <element id="file-copy" path="$USER_HOME$/Downloads/mysql-connector-java-5.1.49/META-INF/MANIFEST.MF" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/META-INF/MANIFEST.MF" />
         </element>
         <element id="module-output" name="Server" />
       </element>

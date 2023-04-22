@@ -108,7 +108,7 @@ class Server {
                             out.println("connexion "+username+" "+password);
                             Database.LogConnexion(username,password);
                         }else {
-                            out.println("0");
+                            out.println("wrong identifiants");
                         }
                     }
                     else if (words[0].equals("message")){
@@ -118,14 +118,16 @@ class Server {
                         }
                         String[] informationMessage;
                         informationMessage = Database.LogMessage(message,words[1],words[2]);
-                        out.println("message " +informationMessage[0]+" "+informationMessage[1]+ message);
+                        out.println("message " +informationMessage[0]+" "+informationMessage[1]+" "+message);
                     }
                     else if (words[0].equals("getdata")){
                         String[][] result = Database.recoltData("SELECT * FROM `log`");
                         //out.println("getdata "+ Arrays.deepToString(result));
                         //System.out.println("database "+ Arrays.deepToString(result));
                     }
-                    else if (words[0].equals("exit")){
+                    else if (words[0].equals("deconnexion")) {
+                        Database.LogDeconnexion(words[1],words[2]);
+                    } else if (words[0].equals("exit")){
                         break;
                     }
                 }
