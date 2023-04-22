@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -12,16 +14,8 @@ public class messagerieFacedeBook extends JFrame {
     private JLabel TextOut2;
     private JLabel TextOut3;
     private JLabel TextOut4;
-    private JLabel Pseudo0;
-    private JLabel Pseudo1;
-    private JLabel Pseudo2;
-    private JLabel Pseudo3;
-    private JLabel Pseudo4;
-    private JLabel Statut0;
-    private JLabel Statut1;
-    private JLabel Statut2;
-    private JLabel Statut3;
-    private JLabel Statut4;
+
+
     private JButton OPTIONButton;
     private JPanel STATUT0;
     private JPanel STATUT4;
@@ -36,6 +30,12 @@ public class messagerieFacedeBook extends JFrame {
     private JLabel USERNAME2;
     private JLabel USERNAME1;
     private JLabel USERNAME0;
+
+    private JLabel Pseudo0;
+    private JLabel Pseudo1;
+    private JLabel Pseudo2;
+    private JLabel Pseudo3;
+    private JLabel Pseudo4;
     private JLabel Pseudo5;
     private JLabel Pseudo6;
     private JLabel Pseudo7;
@@ -45,6 +45,13 @@ public class messagerieFacedeBook extends JFrame {
     private JLabel Pseudo11;
     private JLabel Pseudo12;
     private JLabel Pseudo13;
+    private JLabel Pseudo14;
+
+    private JLabel Statut0;
+    private JLabel Statut1;
+    private JLabel Statut2;
+    private JLabel Statut3;
+    private JLabel Statut4;
     private JLabel Statut5;
     private JLabel Statut6;
     private JLabel Statut7;
@@ -64,12 +71,18 @@ public class messagerieFacedeBook extends JFrame {
         frame.setVisible(true);
         frame.setContentPane(panel1);
 
+
         textField1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String message = textField1.getText();
                 out.println("message " + username + " " + password + " " + message);
                 textField1.setText("");
+            }
+        });
+        frame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                out.println("deconnexion " + username + " " + password);
             }
         });
 
@@ -118,7 +131,7 @@ public class messagerieFacedeBook extends JFrame {
 
         // USERNAME
         if (!USERNAME3.getText().equals("")) {
-            USERNAME4.setText(USERNAME3.getText());
+            USERNAME4 .setText(USERNAME3.getText());
         }
         if (!USERNAME2.getText().equals("")) {
             USERNAME3.setText(USERNAME2.getText());

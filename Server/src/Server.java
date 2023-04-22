@@ -106,8 +106,9 @@ class Server {
                         String username = words[1];
                         String password = words[2];
                         if (Database.identification("SELECT*FROM `User` WHERE USERNAME ='" +username+"' AND PASSWORD = '"+password+"'")) {
-                            out.println("connexion "+username+" "+password);
                             Database.LogConnexion(username,password);
+                            StringBuilder connected = Database.whoConnected("SELECT STATUT FROM `User`");
+                            out.println("connexion "+username+" "+password+" "+connected);
                         }else {
                             out.println("wrong identifiants");
                         }
@@ -128,6 +129,9 @@ class Server {
                     }
                     else if (words[0].equals("deconnexion")) {
                         Database.LogDeconnexion(words[1],words[2]);
+                        StringBuilder connected = Database.whoConnected("SELECT STATUT FROM `User`");
+
+                        out.println("deconnexion "+connected);
 
                     } else if (words[0].equals("exit")){
                         Database.queryUpdate("DROP TABLE user, message, log");

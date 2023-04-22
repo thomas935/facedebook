@@ -106,6 +106,29 @@ public class Database {
             }
         }return null;
     }
+    public static StringBuilder whoConnected(String request) {
+        Statement statement = null;
+        StringBuilder connected = new StringBuilder();
+        try {
+            statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(request);
+            while(resultSet.next()){
+                connected.append(resultSet.getString(1));
+            }
+
+            return connected;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+
+        } finally {
+            try {
+                if (statement != null)
+                    statement.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }return null;
+    }
 
     public static Boolean identification(String request) {
         Statement statement = null;
@@ -191,8 +214,6 @@ public class Database {
             }
         }
     }
-
-
     public static void LogConnexion(String username, String password){
         LocalDateTime myDateObj;
         myDateObj = LocalDateTime.now();

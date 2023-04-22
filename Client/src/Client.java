@@ -37,8 +37,6 @@ class Client {
                 if (Objects.equals(words[0], "connexion")){
                     System.out.println("Connection established");
                     messagerieFacedeBooks.add(new messagerieFacedeBook(out,words[1],words[2]));
-
-
                     for (messagerieFacedeBook messagerieFacedeBook : messagerieFacedeBooks) {
                         messagerieFacedeBook.Statut(words[3]);
                     }
@@ -52,10 +50,12 @@ class Client {
                     for (messagerieFacedeBook messagerieFacedeBook : messagerieFacedeBooks) {
                         messagerieFacedeBook.displayMessage(message,words[2],words[3]);
                     }
-                }
-                else if (Objects.equals(words[0], "getdata")){
+                } else if (Objects.equals(words[0],"deconnexion")) {
+                    for (messagerieFacedeBook messagerieFacedeBook : messagerieFacedeBooks) {
+                        messagerieFacedeBook.Statut(words[1]);
+                    }
+                } else if (Objects.equals(words[0], "getdata")){
                     new test_data();
-
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Identifiants invalides.");

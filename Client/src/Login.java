@@ -41,7 +41,6 @@ public class Login extends JFrame {
             }
         });
 
-        frame.setVisible(true);
 
         databaseButton.addActionListener(new ActionListener() {
             @Override
