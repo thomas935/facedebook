@@ -185,6 +185,39 @@ public class messagerieFacedeBook extends JFrame {
                         Statut5.setForeground(Color.GREEN);
                         Statut5.setText("En ligne");
                         break;
+                    case 6:
+                        Statut6.setForeground(Color.GREEN);
+                        Statut6.setText("En ligne");
+                        break;
+                    case 7:
+                        Statut7.setForeground(Color.GREEN);
+                        Statut7.setText("En ligne");
+                        break;
+                    case 8:
+                        Statut8.setForeground(Color.GREEN);
+                        Statut8.setText("En ligne");
+                        break;
+                    case 9:
+                        Statut9.setForeground(Color.GREEN);
+                        Statut9.setText("En ligne");
+                        break;
+                    case 10:
+                        Statut10.setForeground(Color.GREEN);
+                        Statut10.setText("En ligne");
+                        break;
+                    case 11:
+                        Statut11.setForeground(Color.GREEN);
+                        Statut11.setText("En ligne");
+                        break;
+                    case 12:
+                        Statut12.setForeground(Color.GREEN);
+                        Statut12.setText("En ligne");
+                        break;
+                    case 13:
+                        Statut13.setForeground(Color.GREEN);
+                        Statut13.setText("En ligne");
+                        break;
+
                 }
             } else if (statut.charAt(i) == '0'){
                 switch (i) {
