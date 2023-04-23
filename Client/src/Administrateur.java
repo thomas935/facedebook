@@ -16,8 +16,8 @@ public class Administrateur {
     private JButton BANNIRButton11;
     private JButton BANNIRButton12;
     private JButton BANNIRButton13;
-    private JButton PROMOTIONButton;
-    private JButton PROMOTIONButton14;
+    private JButton PROMOTIONButton0;
+    private JButton PROMOTIONButton1;
     private JButton PROMOTIONButton2;
     private JButton PROMOTIONButton3;
     private JButton PROMOTIONButton4;

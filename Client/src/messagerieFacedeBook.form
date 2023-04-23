@@ -95,7 +95,7 @@
                             <properties>
                               <font name="JetBrains Mono" size="12" style="1"/>
                               <foreground color="-1118482"/>
-                              <text value="CALRA"/>
+                              <text value="CLARA"/>
                             </properties>
                           </component>
                         </children>
@@ -470,7 +470,7 @@
                         <properties>
                           <font name="JetBrains Mono" size="12" style="1"/>
                           <foreground color="-1118482"/>
-                          <text value="ALEXANDREµ"/>
+                          <text value="ALEXANDRE"/>
                         </properties>
                       </component>
                     </children>
