@@ -78,8 +78,6 @@ public class messagerieFacedeBook extends JFrame {
         this.username = username;
         this.password = password;
 
-
-
         textField1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -390,12 +388,15 @@ public class messagerieFacedeBook extends JFrame {
     public void UserOption(){
         new optionUserLambda();
     }
-
     public void ModoOption(PrintWriter out){
         new Moderateur(out);
     }
     public void AdminOption(PrintWriter out){
         new Administrateur(out);
+    }
+
+    public void setOPTIONButton(String statut) {
+        OPTIONButton.setText(statut+"- Options");
     }
 
     public String getUsername() {
@@ -405,6 +406,7 @@ public class messagerieFacedeBook extends JFrame {
     public String getPassword() {
         return password;
     }
+
 
 
 }

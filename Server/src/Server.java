@@ -22,6 +22,7 @@ class Server {
         };
         Database.CreateDatabase(request);
 
+
         ServerSocket server = null;
         Database.connect();
         try {
@@ -149,8 +150,16 @@ class Server {
                     } else if (words[0].equals("promouvoir")) {
                         if (Objects.equals(Database.query("SELECT PERMISSION FROM user WHERE ID = '"+words[1]+"'"), "user")) {
                             Database.queryUpdate("UPDATE user SET PERMISSION = 'Modo' WHERE ID = '"+words[1]+"'");
+                            String Permission = Database.query("SELECT PERMISSION FROM user WHERE ID = '"+words[1]+"'");
+                            String Username = Database.query("SELECT USERNAME FROM user WHERE ID = '"+words[1]+"'");
+                            String Password = Database.query("SELECT PASSWORD FROM user WHERE ID = '"+words[1]+"'");
+                            out.println("promouvoir "+Username+" "+Password+" "+Permission);
                         } else if (Objects.equals(Database.query("SELECT PERMISSION FROM user WHERE ID = '"+words[1]+"'"), "Modo")) {
                             Database.queryUpdate("UPDATE user SET PERMISSION = 'Admin' WHERE ID = '"+words[1]+"'");
+                            String Permission = Database.query("SELECT PERMISSION FROM user WHERE ID = '"+words[1]+"'");
+                            String Username = Database.query("SELECT USERNAME FROM user WHERE ID = '"+words[1]+"'");
+                            String Password = Database.query("SELECT PASSWORD FROM user WHERE ID = '"+words[1]+"'");
+                            out.println("promouvoir "+Username+" "+Password+" "+Permission);
                         } else if (Objects.equals(Database.query("SELECT PERMISSION FROM user WHERE ID = '"+words[1]+"'"), "Admin")) {
                             out.println("promouvoir impossible");
                         }

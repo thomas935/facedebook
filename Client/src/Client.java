@@ -72,12 +72,19 @@ class Client {
                             }
                         }
                     }
-
                 } else if (Objects.equals(words[0],"bannir")) {
                     for (messagerieFacedeBook messagerieFacedeBook : messagerieFacedeBooks) {
                         messagerieFacedeBook.Statut(words[1]);
                     }
-                } else if (Objects.equals(words[0], "getdata")){
+                }else if (Objects.equals(words[0],"promouvoir")) {
+                    for (messagerieFacedeBook messagerieFacedeBook : messagerieFacedeBooks) {
+                        if (Objects.equals(messagerieFacedeBook.getUsername(), words[1]) && Objects.equals(messagerieFacedeBook.getPassword(), words[2])){
+                            messagerieFacedeBook.setOPTIONButton(words[3]);
+                        }
+                    }
+                }
+
+                else if (Objects.equals(words[0], "getdata")){
 
                     new test_data();
                 }
