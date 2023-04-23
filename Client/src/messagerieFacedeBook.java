@@ -225,51 +225,51 @@ public class messagerieFacedeBook extends JFrame {
                         Statut0.setForeground(Color.RED);
                         Statut0.setText("Hors ligne");
                         break;
-                    case 1:
+                    case 12:
                         Statut12.setForeground(Color.RED);
                         Statut12.setText("Hors ligne");
                         break;
-                    case 2:
+                    case 11:
                         Statut11.setForeground(Color.RED);
                         Statut11.setText("Hors ligne");
                         break;
-                    case 3:
+                    case 10:
                         Statut10.setForeground(Color.RED);
                         Statut10.setText("Hors ligne");
                         break;
-                    case 4:
+                    case 9:
                         Statut9.setForeground(Color.RED);
                         Statut9.setText("Hors ligne");
                         break;
-                    case 5:
+                    case 8:
                         Statut8.setForeground(Color.RED);
                         Statut8.setText("Hors ligne");
                         break;
-                    case 6:
+                    case 7:
                         Statut7.setForeground(Color.RED);
                         Statut7.setText("Hors ligne");
                         break;
-                    case 7:
+                    case 6:
                         Statut6.setForeground(Color.RED);
                         Statut6.setText("Hors ligne");
                         break;
-                    case 8:
+                    case 5:
                         Statut5.setForeground(Color.RED);
                         Statut5.setText("Hors ligne");
                         break;
-                    case 9:
+                    case 4:
                         Statut4.setForeground(Color.RED);
                         Statut4.setText("Hors ligne");
                         break;
-                    case 10:
+                    case 3:
                         Statut3.setForeground(Color.RED);
                         Statut3.setText("Hors ligne");
                         break;
-                    case 11:
+                    case 2:
                         Statut2.setForeground(Color.RED);
                         Statut2.setText("Hors ligne");
                         break;
-                    case 12:
+                    case 1:
                         Statut1.setForeground(Color.RED);
                         Statut1.setText("Hors ligne");
                         break;
