@@ -70,6 +70,23 @@ public class Administrateur {
         BANNIRButton12.addActionListener(e -> out.println("bannir "+"13"));
         BANNIRButton13.addActionListener(e -> out.println("bannir "+"14"));
 
+        PROMOTIONButton0.addActionListener(e -> out.println("promouvoir "+"1"));
+        PROMOTIONButton1.addActionListener(e -> out.println("promouvoir "+"2"));
+        PROMOTIONButton2.addActionListener(e -> out.println("promouvoir "+"3"));
+        PROMOTIONButton3.addActionListener(e -> out.println("promouvoir "+"4"));
+        PROMOTIONButton4.addActionListener(e -> out.println("promouvoir "+"5"));
+        PROMOTIONButton5.addActionListener(e -> out.println("promouvoir "+"6"));
+        PROMOTIONButton6.addActionListener(e -> out.println("promouvoir "+"7"));
+        PROMOTIONButton7.addActionListener(e -> out.println("promouvoir "+"8"));
+        PROMOTIONButton8.addActionListener(e -> out.println("promouvoir "+"9"));
+        PROMOTIONButton9.addActionListener(e -> out.println("promouvoir "+"10"));
+        PROMOTIONButton10.addActionListener(e -> out.println("promouvoir "+"11"));
+        PROMOTIONButton11.addActionListener(e -> out.println("promouvoir "+"12"));
+        PROMOTIONButton12.addActionListener(e -> out.println("promouvoir "+"13"));
+        PROMOTIONButton13.addActionListener(e -> out.println("promouvoir "+"14"));
+
+
+
 
     }
 }

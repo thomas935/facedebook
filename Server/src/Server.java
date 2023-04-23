@@ -145,8 +145,15 @@ class Server {
                         Database.queryUpdate("UPDATE user SET PERMISSION = 'banni' WHERE ID = '"+words[1]+"'");
                         StringBuilder connected = Database.whoConnected("SELECT STATUT FROM `User`");
 
-
                         out.println("bannir "+connected);
+                    } else if (words[0].equals("promouvoir")) {
+                        if (Objects.equals(Database.query("SELECT PERMISSION FROM user WHERE ID = '"+words[1]+"'"), "user")) {
+                            Database.queryUpdate("UPDATE user SET PERMISSION = 'Modo' WHERE ID = '"+words[1]+"'");
+                        } else if (Objects.equals(Database.query("SELECT PERMISSION FROM user WHERE ID = '"+words[1]+"'"), "Modo")) {
+                            Database.queryUpdate("UPDATE user SET PERMISSION = 'Admin' WHERE ID = '"+words[1]+"'");
+                        } else if (Objects.equals(Database.query("SELECT PERMISSION FROM user WHERE ID = '"+words[1]+"'"), "Admin")) {
+                            out.println("promouvoir impossible");
+                        }
                     } else if (words[0].equals("exit")){
                         Database.queryUpdate("DROP TABLE user, message, log");
                         out.println("exit");

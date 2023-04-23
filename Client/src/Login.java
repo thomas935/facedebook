@@ -42,14 +42,6 @@ public class Login extends JFrame {
         });
 
 
-        databaseButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                out.println("getdata");
-            }
-        });
-
-
     }
 }
 
