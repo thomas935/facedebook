@@ -40,4 +40,5 @@ public class Moderateur extends JFrame{
         BOUTONBAN12.addActionListener(e -> out.println("bannir "+"13"));
         BOUTONBAN13.addActionListener(e -> out.println("bannir "+"14"));
     }
+
 }
