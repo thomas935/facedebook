@@ -54,6 +54,23 @@ class Client {
                     for (messagerieFacedeBook messagerieFacedeBook : messagerieFacedeBooks) {
                         messagerieFacedeBook.Statut(words[1]);
                     }
+                } else if (Objects.equals(words[0],"option")) {
+                    for (messagerieFacedeBook messagerieFacedeBook : messagerieFacedeBooks) {
+                        if (Objects.equals(messagerieFacedeBook.getUsername(), words[1]) && Objects.equals(messagerieFacedeBook.getPassword(), words[2])){
+                            switch (words[3]){
+                                case "user":
+                                    messagerieFacedeBook.UserOption();
+                                    break;
+                                case "Modo":
+                                    messagerieFacedeBook.ModoOption();
+                                    break;
+                                case "Admin":
+                                    messagerieFacedeBook.AdminOption();
+                                    break;
+                            }
+                        }
+                    }
+
                 } else if (Objects.equals(words[0], "getdata")){
                     new test_data();
                 }

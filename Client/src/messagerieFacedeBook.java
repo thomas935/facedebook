@@ -6,8 +6,12 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Optional;
 
 public class messagerieFacedeBook extends JFrame {
+
+    private String username;
+    private String password;
     private JPanel panel1;
     private JTextField textField1;
     private JLabel TextOut0;
@@ -71,7 +75,8 @@ public class messagerieFacedeBook extends JFrame {
         frame.setSize(800, 600);
         frame.setVisible(true);
         frame.setContentPane(panel1);
-
+        this.username = username;
+        this.password = password;
 
         textField1.addActionListener(new ActionListener() {
             @Override
@@ -95,9 +100,13 @@ public class messagerieFacedeBook extends JFrame {
                 out.println("deconnexion " + username + " " + password);
             }
         });
-
+        OPTIONButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                out.println("option "+username+" "+password);
+            }
+        });
     }
-
     public void displayMessage(StringBuilder message, String localDateTime, String Username) {
         if (!TextOut3.getText().equals("")) {
             TextOut4.setText(TextOut3.getText());
@@ -272,5 +281,24 @@ public class messagerieFacedeBook extends JFrame {
                 }
             }
         }
+    }
+
+    public void UserOption(){
+        new optionUserLambda();
+    }
+
+    public void ModoOption(){
+        new Moderateur();
+    }
+    public void AdminOption(){
+        new Administrateur();
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
     }
 }

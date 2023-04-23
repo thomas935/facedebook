@@ -14,4 +14,12 @@ public class Administrateur {
     private JLabel PSEUDO6;
     private JLabel PSEUDO7;
     private JLabel PSEUDO8;
+
+
+    public Administrateur(){
+        JFrame frame = new JFrame();
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setSize(800, 600);
+        frame.setVisible(true);
+    }
 }
