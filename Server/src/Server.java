@@ -107,7 +107,8 @@ class Server {
                         if (Database.identification("SELECT*FROM `User` WHERE USERNAME ='" +username+"' AND PASSWORD = '"+password+"'")&&Database.Banned("SELECT PERMISSION FROM `User` WHERE USERNAME ='" +username+"' AND PASSWORD = '"+password+"'")) {
                             Database.LogConnexion(username,password);
                             StringBuilder connected = Database.whoConnected("SELECT STATUT FROM `User`");
-                            out.println("connexion "+username+" "+password+" "+connected);
+                            String Permission = Database.query("SELECT PERMISSION FROM `User` WHERE USERNAME ='" +username+"' AND PASSWORD = '"+password+"'");
+                            out.println("connexion "+username+" "+password+" "+connected+" "+Permission);
                         }else {
                             out.println("wrong identifiants");
                         }
