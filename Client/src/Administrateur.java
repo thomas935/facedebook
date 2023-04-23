@@ -32,6 +32,7 @@ public class Administrateur {
     private JButton button29;
     private JButton button30;
     private JButton STATISTIQUESButton;
+    private JPanel Panel1;
 
 
     public Administrateur(){
@@ -39,5 +40,6 @@ public class Administrateur {
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setSize(800, 600);
         frame.setVisible(true);
+        frame.setContentPane(Panel1);
     }
 }
