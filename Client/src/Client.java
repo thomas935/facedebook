@@ -78,7 +78,7 @@ class Client {
                         messagerieFacedeBook.Statut(words[1]);
                     }
                 } else if (Objects.equals(words[0], "getdata")){
-                    new PieChartExample();
+
                     new test_data();
                 }
                 else{

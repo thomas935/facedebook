@@ -78,6 +78,7 @@ public class messagerieFacedeBook extends JFrame {
         this.username = username;
         this.password = password;
 
+
         textField1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
