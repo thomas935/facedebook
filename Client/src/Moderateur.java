@@ -1,16 +1,21 @@
 import javax.swing.*;
 
 public class Moderateur extends JFrame{
-    private JButton BANNIRButton;
-    private JLabel PSEUDO0;
-    private JLabel PSEUDO1;
-    private JLabel PSEUDO2;
-    private JLabel PSEUDO3;
-    private JLabel PSEUDO4;
-    private JLabel PSEUDO5;
-    private JLabel PSEUDO6;
-    private JLabel PSEUDO7;
     private JPanel Panel1;
+    private JButton BOUTONBAN10;
+    private JButton BOUTONBAN9;
+    private JButton BOUTONBAN8;
+    private JButton BOUTONBAN7;
+    private JButton BOUTONBAN6;
+    private JButton BOUTONBAN5;
+    private JButton BOUTONBAN4;
+    private JButton BOUTONBAN3;
+    private JButton BOUTONBAN2;
+    private JButton BOUTONBAN1;
+    private JButton BOUTONBAN0;
+    private JButton BOUTONBAN11;
+    private JButton BOUTONBAN12;
+    private JButton BOUTONBAN13;
 
     public Moderateur(){
         JFrame frame = new JFrame();
