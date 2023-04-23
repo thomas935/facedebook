@@ -68,7 +68,7 @@ public class messagerieFacedeBook extends JFrame {
 
 
     public messagerieFacedeBook(PrintWriter out, String username, String password, String Permission) throws IOException {
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame(username);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setSize(800, 600);
         frame.setVisible(true);
@@ -76,6 +76,7 @@ public class messagerieFacedeBook extends JFrame {
         OPTIONButton.setText(Permission+"- Options");
         this.username = username;
         this.password = password;
+
 
 
         textField1.addActionListener(new ActionListener() {
