@@ -64,7 +64,7 @@ class Client {
                                     messagerieFacedeBook.UserOption();
                                     break;
                                 case "Modo":
-                                    messagerieFacedeBook.ModoOption();
+                                    messagerieFacedeBook.ModoOption(out);
                                     break;
                                 case "Admin":
                                     messagerieFacedeBook.AdminOption(out);
