@@ -104,7 +104,7 @@ class Server {
                     if (words[0].equals("connexion")) {
                         String username = words[1];
                         String password = words[2];
-                        if (Database.identification("SELECT*FROM `User` WHERE USERNAME ='" +username+"' AND PASSWORD = '"+password+"'")) {
+                        if (Database.identification("SELECT*FROM `User` WHERE USERNAME ='" +username+"' AND PASSWORD = '"+password+"'")&&Database.Banned("SELECT PERMISSION FROM `User` WHERE USERNAME ='" +username+"' AND PASSWORD = '"+password+"'")) {
                             Database.LogConnexion(username,password);
                             StringBuilder connected = Database.whoConnected("SELECT STATUT FROM `User`");
                             out.println("connexion "+username+" "+password+" "+connected);

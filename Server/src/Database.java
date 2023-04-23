@@ -152,6 +152,33 @@ public class Database {
             }
         }
     }
+    public static Boolean Banned(String request) {
+        Statement statement = null;
+        Boolean ban = false;
+        try {
+            statement = connection.createStatement();
+            ResultSet result = statement.executeQuery(request);
+            while(result.next()) {
+                String test = result.getString(1);
+                if (Objects.equals(result.getString(1), "banni")) {
+                    ban = false;
+                } else {
+                    ban = true;
+                }
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return false;
+        } finally {
+            try {
+                if (statement != null)
+                    statement.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return ban;
+    }
 
     public static void queryUpdate(String request) {
         Statement statement = null;
