@@ -6,6 +6,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Objects;
 
 public class messagerieFacedeBook extends JFrame {
 
@@ -64,11 +65,11 @@ public class messagerieFacedeBook extends JFrame {
     private JLabel Statut2;
     private JLabel Statut1;
     private JLabel Statut13;
-
+    private JFrame frame;
 
 
     public messagerieFacedeBook(PrintWriter out, String username, String password, String Permission) throws IOException {
-        JFrame frame = new JFrame(username);
+        frame = new JFrame(username);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setSize(800, 600);
         frame.setVisible(true);
@@ -285,58 +286,100 @@ public class messagerieFacedeBook extends JFrame {
                     case 0 :
                         Statut0.setForeground(Color.ORANGE);
                         Statut0.setText("Banni");
+                        if (Objects.equals(this.username, "user1")){
+                            frame.dispose();
+                        }
                         break;
                     case 12 :
                         Statut12.setForeground(Color.ORANGE);
                         Statut12.setText("Banni");
+                        if (Objects.equals(this.username, "user13")){
+                            frame.dispose();
+                        }
                         break;
                     case 11 :
                         Statut11.setForeground(Color.ORANGE);
                         Statut11.setText("Banni");
+                        if (Objects.equals(this.username, "user12")){
+                            frame.dispose();
+                        }
                         break;
                     case 10 :
                         Statut10.setForeground(Color.ORANGE);
                         Statut10.setText("Banni");
+                        if (Objects.equals(this.username, "user11")){
+                            frame.dispose();
+                        }
                         break;
                     case 9 :
                         Statut9.setForeground(Color.ORANGE);
                         Statut9.setText("Banni");
+                        if (Objects.equals(this.username, "user10")){
+                            frame.dispose();
+                        }
                         break;
                     case 8 :
                         Statut8.setForeground(Color.ORANGE);
                         Statut8.setText("Banni");
+                        if (Objects.equals(this.username, "user9")){
+                            frame.dispose();
+                        }
                         break;
                     case 7 :
                         Statut7.setForeground(Color.ORANGE);
                         Statut7.setText("Banni");
+                        if (Objects.equals(this.username, "user8")){
+                            frame.dispose();
+                        }
                         break;
                     case 6 :
                         Statut6.setForeground(Color.ORANGE);
                         Statut6.setText("Banni");
+                        if (Objects.equals(this.username, "user7")){
+                            frame.dispose();
+                        }
                         break;
                     case 5 :
                         Statut5.setForeground(Color.ORANGE);
                         Statut5.setText("Banni");
+                        if (Objects.equals(this.username, "user6")){
+                            frame.dispose();
+                        }
                         break;
                     case 4 :
                         Statut4.setForeground(Color.ORANGE);
                         Statut4.setText("Banni");
+                        if (Objects.equals(this.username, "user5")){
+                            frame.dispose();
+                        }
                         break;
                     case 3 :
                         Statut3.setForeground(Color.ORANGE);
                         Statut3.setText("Banni");
+                        if (Objects.equals(this.username, "user4")){
+                            frame.dispose();
+                        }
                         break;
                     case 2 :
                         Statut2.setForeground(Color.ORANGE);
                         Statut2.setText("Banni");
+                        if (Objects.equals(this.username, "user3")){
+                            frame.dispose();
+                        }
                         break;
                     case 1 :
                         Statut1.setForeground(Color.ORANGE);
                         Statut1.setText("Banni");
+                        if (Objects.equals(this.username, "user2")){
+                            frame.dispose();
+                        }
                         break;
                     case 13 :
                         Statut13.setForeground(Color.ORANGE);
                         Statut13.setText("Banni");
+                        if (Objects.equals(this.username, "user14")){
+                            frame.dispose();
+                        }
                         break;
 
                 }
