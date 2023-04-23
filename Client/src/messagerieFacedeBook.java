@@ -314,8 +314,8 @@ public class messagerieFacedeBook extends JFrame {
         new optionUserLambda();
     }
 
-    public void ModoOption(){
-        new Moderateur();
+    public void ModoOption(PrintWriter out){
+        new Moderateur(out);
     }
     public void AdminOption(PrintWriter out){
         new Administrateur(out);
