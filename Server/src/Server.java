@@ -24,7 +24,6 @@ class Server {
 
         ServerSocket server = null;
         Database.connect();
-
         try {
             // server is listening on port 1234
             server = new ServerSocket(1234);

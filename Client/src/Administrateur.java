@@ -44,6 +44,7 @@ public class Administrateur {
     private JLabel PSEUDO11;
     private JLabel PSEUDO12;
     private JLabel PSEUDO13;
+    private JPanel Panel1;
 
 
     public Administrateur(){
@@ -51,5 +52,6 @@ public class Administrateur {
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setSize(800, 600);
         frame.setVisible(true);
+        frame.setContentPane(Panel1);
     }
 }
