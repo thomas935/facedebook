@@ -16,21 +16,24 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library">
       <library>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/../lib/jfreechart-1.0.19" />
-        </CLASSES>
+        <CLASSES />
         <JAVADOC />
         <SOURCES>
-          <root url="file://$MODULE_DIR$/../lib/jfreechart-1.0.19/experimental" />
-          <root url="file://$MODULE_DIR$/../lib/jfreechart-1.0.19/source" />
-          <root url="file://$MODULE_DIR$/../lib/jfreechart-1.0.19/swt" />
-          <root url="file://$MODULE_DIR$/../lib/jfreechart-1.0.19/tests" />
+          <root url="file://$USER_HOME$/Downloads/jfreechart-1.5.4/jfreechart-1.5.4/src/main/java" />
+          <root url="file://$USER_HOME$/Downloads/jfreechart-1.5.4/jfreechart-1.5.4/src/test/java" />
         </SOURCES>
-        <jarDirectory url="file://$MODULE_DIR$/../lib/jfreechart-1.0.19" recursive="false" />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/jfreechart-1.5.4.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

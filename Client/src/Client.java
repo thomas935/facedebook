@@ -1,8 +1,10 @@
+
 import javax.swing.*;
 import java.io.*;
 import java.net.*;
 import java.util.*;
 import javax.swing.*;
+
 
 
 
@@ -65,13 +67,18 @@ class Client {
                                     messagerieFacedeBook.ModoOption();
                                     break;
                                 case "Admin":
-                                    messagerieFacedeBook.AdminOption();
+                                    messagerieFacedeBook.AdminOption(out);
                                     break;
                             }
                         }
                     }
 
+                } else if (Objects.equals(words[0],"bannir")) {
+                    for (messagerieFacedeBook messagerieFacedeBook : messagerieFacedeBooks) {
+                        messagerieFacedeBook.Statut(words[1]);
+                    }
                 } else if (Objects.equals(words[0], "getdata")){
+                    new PieChartExample();
                     new test_data();
                 }
                 else{

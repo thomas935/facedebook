@@ -235,6 +235,16 @@ public class Database {
         Database.queryUpdate("UPDATE user SET STATUT = 0 WHERE USERNAME ='" +username+"' AND PASSWORD = '"+password+"'");
 
     }
+    public static void LogBannir(int USER_ID){
+        LocalDateTime myDateObj;
+        myDateObj = LocalDateTime.now();
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String formattedDate = myDateObj.format(myFormatObj);
+        // insert the connection in the database
+        Database.queryUpdate("INSERT INTO `log`(`USER_ID`, `TIMESTAMP`, `TYPE`) VALUES ('"+USER_ID+"','"+formattedDate+"' ,'deconnexion')");
+        Database.queryUpdate("UPDATE user SET STATUT = 2 WHERE ID ='" +USER_ID+"'");
+
+    }
     public static String[] LogMessage(StringBuilder message, String username, String password){
         String[] informationMessage = new String[2];
         LocalDateTime myDateObj;

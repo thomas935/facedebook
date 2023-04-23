@@ -219,7 +219,7 @@ public class messagerieFacedeBook extends JFrame {
                         break;
 
                 }
-            } else {
+            } else if (statut.charAt(i) == '0'){
                 switch (i) {
                     case 0:
                         Statut0.setForeground(Color.RED);
@@ -279,6 +279,66 @@ public class messagerieFacedeBook extends JFrame {
                         break;
 
                 }
+            } else if (statut.charAt(i)=='2') {
+                switch (i){
+                    case 0 :
+                        Statut0.setForeground(Color.ORANGE);
+                        Statut0.setText("Banni");
+                        break;
+                    case 1 :
+                        Statut1.setForeground(Color.ORANGE);
+                        Statut1.setText("Banni");
+                        break;
+                    case 2 :
+                        Statut2.setForeground(Color.ORANGE);
+                        Statut2.setText("Banni");
+                        break;
+                    case 3 :
+                        Statut3.setForeground(Color.ORANGE);
+                        Statut3.setText("Banni");
+                        break;
+                    case 4 :
+                        Statut4.setForeground(Color.ORANGE);
+                        Statut4.setText("Banni");
+                        break;
+                    case 5 :
+                        Statut5.setForeground(Color.ORANGE);
+                        Statut5.setText("Banni");
+                        break;
+                    case 6 :
+                        Statut6.setForeground(Color.ORANGE);
+                        Statut6.setText("Banni");
+                        break;
+                    case 7 :
+                        Statut7.setForeground(Color.ORANGE);
+                        Statut7.setText("Banni");
+                        break;
+                    case 8 :
+                        Statut8.setForeground(Color.ORANGE);
+                        Statut8.setText("Banni");
+                        break;
+                    case 9 :
+                        Statut9.setForeground(Color.ORANGE);
+                        Statut9.setText("Banni");
+                        break;
+                    case 10 :
+                        Statut10.setForeground(Color.ORANGE);
+                        Statut10.setText("Banni");
+                        break;
+                    case 11 :
+                        Statut11.setForeground(Color.ORANGE);
+                        Statut11.setText("Banni");
+                        break;
+                    case 12 :
+                        Statut12.setForeground(Color.ORANGE);
+                        Statut12.setText("Banni");
+                        break;
+                    case 13 :
+                        Statut13.setForeground(Color.ORANGE);
+                        Statut13.setText("Banni");
+                        break;
+
+                }
             }
         }
     }
@@ -290,8 +350,8 @@ public class messagerieFacedeBook extends JFrame {
     public void ModoOption(){
         new Moderateur();
     }
-    public void AdminOption(){
-        new Administrateur();
+    public void AdminOption(PrintWriter out){
+        new Administrateur(out);
     }
 
     public String getUsername() {
