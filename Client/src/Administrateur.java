@@ -48,14 +48,14 @@ public class Administrateur {
     private JPanel Panel1;
 
 
-    public Administrateur(PrintWriter out){
+    public Administrateur(PrintWriter out,String Username, String Password){
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setSize(800, 600);
         frame.setVisible(true);
         frame.setContentPane(Panel1);
 
-        BANNIRButton.addActionListener(e -> out.println("bannir "+"1"));
+        BANNIRButton.addActionListener(e -> out.println("bannir "+"1 "+ Username+" "+Password));
         BANNIRButton1.addActionListener(e -> out.println("bannir "+"2"));
         BANNIRButton2.addActionListener(e -> out.println("bannir "+"3"));
         BANNIRButton3.addActionListener(e -> out.println("bannir "+"4"));

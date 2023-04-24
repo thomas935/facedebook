@@ -393,7 +393,7 @@ public class messagerieFacedeBook extends JFrame {
         new Moderateur(out);
     }
     public void AdminOption(PrintWriter out){
-        new Administrateur(out);
+        new Administrateur(out,username,password);
     }
 
     public void setOPTIONButton(String statut) {
