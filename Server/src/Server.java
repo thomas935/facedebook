@@ -18,7 +18,7 @@ class Server {
             "CREATE TABLE IF NOT EXISTS User (ID INT PRIMARY KEY, USERNAME VARCHAR(255) NOT NULL,FIRSTNAME VARCHAR(255) NOT NULL,LASTNAME VARCHAR(255) NOT NULL, EMAIL VARCHAR(255) NOT NULL,PASSWORD VARCHAR(255) NOT NULL,PERMISSION VARCHAR(255) NOT NULL, LAST_CONNECTION_TIME DATETIME, STATUT INT DEFAULT 0)",
             "CREATE TABLE IF NOT EXISTS MESSAGE (ID INT PRIMARY KEY, USER_ID INT NOT NULL, TIMESTAMP DATETIME NOT NULL, CONTENT VARCHAR(255) NOT NULL, FOREIGN KEY (USER_ID) REFERENCES USER(ID))",
             "CREATE TABLE IF NOT EXISTS LOG (ID INT PRIMARY KEY, USER_ID INT NOT NULL, TIMESTAMP DATETIME NOT NULL, TYPE VARCHAR(50) NOT NULL, FOREIGN KEY (USER_ID) REFERENCES USER(ID))",
-            //"INSERT INTO `User`(`ID`, `USERNAME`, `FIRSTNAME`, `LASTNAME`, `EMAIL`, `PASSWORD`, `PERMISSION`, `LAST_CONNECTION_TIME`) SELECT '1', 'user1', 'Marie', 'Dubois', 'marie.dubois@example.com', 'mdp1', 'user', '2023-04-21 12:00:00' UNION SELECT '2', 'user2', 'Alexandre', 'Lefebvre', 'alexandre.lefebvre@example.com', 'mdp2', 'user', '2023-04-21 12:00:00' UNION SELECT '3', 'user3', 'Aurélie', 'Martin', 'aurelie.martin@example.com', 'mdp3', 'Modo', '2023-04-21 12:00:00' UNION SELECT '4', 'user4', 'Maxime', 'Lecomte', 'maxime.lecomte@example.com', 'mdp4', 'user', '2023-04-21 12:00:00' UNION SELECT '5', 'user5', 'Emilie', 'Girard', 'emilie.girard@example.com', 'mdp5', 'user', '2023-04-21 12:00:00' UNION SELECT '6', 'user6', 'Nicolas', 'Dupont', 'nicolas.dupont@example.com', 'mdp6', 'user', '2023-04-21 12:00:00' UNION SELECT '7', 'user7', 'Laura', 'Perrin', 'laura.perrin@example.com', 'mdp7', 'user', '2023-04-21 12:00:00' UNION SELECT '8', 'user8', 'Hugo', 'Rousseau', 'hugo.rousseau@example.com', 'mdp8', 'user', '2023-04-21 12:00:00' UNION SELECT '9', 'user9', 'Camille', 'Fournier', 'camille.fournier@example.com', 'mdp9', 'user', '2023-04-21 12:00:00' UNION SELECT '10', 'user10', 'Lucas', 'Moreau', 'lucas.moreau@example.com', 'mdp10', 'Admin', '2023-04-21 12:00:00' UNION SELECT '11', 'user11', 'Clara', 'Brun', 'clara.brun@example.com', 'mdp11', 'user', '2023-04-21 12:00:00' UNION SELECT '12', 'user12', 'Louis', 'Gauthier', 'louis.gauthier@example.com', 'mdp12', 'Modo', '2023-04-21 12:00:00' UNION SELECT '13', 'user13', 'Chloé', 'Blanchard', 'chloe.blanchard@example.com', 'mdp13', 'user', '2023-04-21 12:00:00' UNION SELECT '14', 'user14', 'Théo', 'Roussel', 'theo.roussel@example.com', 'mdp14', 'user', '2023-04-21 12:00:00'"
+            "INSERT INTO `User`(`ID`, `USERNAME`, `FIRSTNAME`, `LASTNAME`, `EMAIL`, `PASSWORD`, `PERMISSION`, `LAST_CONNECTION_TIME`) SELECT '1', 'user1', 'Marie', 'Dubois', 'marie.dubois@example.com', 'mdp1', 'user', '2023-04-21 12:00:00' UNION SELECT '2', 'user2', 'Alexandre', 'Lefebvre', 'alexandre.lefebvre@example.com', 'mdp2', 'user', '2023-04-21 12:00:00' UNION SELECT '3', 'user3', 'Aurélie', 'Martin', 'aurelie.martin@example.com', 'mdp3', 'Modo', '2023-04-21 12:00:00' UNION SELECT '4', 'user4', 'Maxime', 'Lecomte', 'maxime.lecomte@example.com', 'mdp4', 'user', '2023-04-21 12:00:00' UNION SELECT '5', 'user5', 'Emilie', 'Girard', 'emilie.girard@example.com', 'mdp5', 'user', '2023-04-21 12:00:00' UNION SELECT '6', 'user6', 'Nicolas', 'Dupont', 'nicolas.dupont@example.com', 'mdp6', 'user', '2023-04-21 12:00:00' UNION SELECT '7', 'user7', 'Laura', 'Perrin', 'laura.perrin@example.com', 'mdp7', 'user', '2023-04-21 12:00:00' UNION SELECT '8', 'user8', 'Hugo', 'Rousseau', 'hugo.rousseau@example.com', 'mdp8', 'user', '2023-04-21 12:00:00' UNION SELECT '9', 'user9', 'Camille', 'Fournier', 'camille.fournier@example.com', 'mdp9', 'user', '2023-04-21 12:00:00' UNION SELECT '10', 'user10', 'Lucas', 'Moreau', 'lucas.moreau@example.com', 'mdp10', 'Admin', '2023-04-21 12:00:00' UNION SELECT '11', 'user11', 'Clara', 'Brun', 'clara.brun@example.com', 'mdp11', 'user', '2023-04-21 12:00:00' UNION SELECT '12', 'user12', 'Louis', 'Gauthier', 'louis.gauthier@example.com', 'mdp12', 'Modo', '2023-04-21 12:00:00' UNION SELECT '13', 'user13', 'Chloé', 'Blanchard', 'chloe.blanchard@example.com', 'mdp13', 'user', '2023-04-21 12:00:00' UNION SELECT '14', 'user14', 'Théo', 'Roussel', 'theo.roussel@example.com', 'mdp14', 'user', '2023-04-21 12:00:00'"
         };
         Database.CreateDatabase(request);
 
@@ -141,12 +141,14 @@ class Server {
 
                         out.println("option "+words[1]+" "+words[2]+" "+ Permission);
                     } else if (words[0].equals("bannir")) {
-
-                        Database.LogBannir(Integer.parseInt(words[1]));
-                        Database.queryUpdate("UPDATE user SET PERMISSION = 'banni' WHERE ID = '"+words[1]+"'");
-                        StringBuilder connected = Database.whoConnected("SELECT STATUT FROM `User`");
-
-                        out.println("bannir "+connected);
+                        if (!Objects.equals(Database.query("SELECT PERMISSION FROM user WHERE ID = '"+words[1]+"'"), Database.query("SELECT PERMISSION FROM user WHERE USERNAME ='"+words[2]+"' AND PASSWORD = '"+words[3]+"'")) && !Objects.equals(Database.query("SELECT PERMISSION FROM user WHERE ID = '"+words[1]+"'"), "Admin")){
+                            Database.LogBannir(Integer.parseInt(words[1]));
+                            Database.queryUpdate("UPDATE user SET PERMISSION = 'banni' WHERE ID = '"+words[1]+"'");
+                            StringBuilder connected = Database.whoConnected("SELECT STATUT FROM `User`");
+                            out.println("bannir "+connected);
+                        } else{
+                            out.println("bannirerreur");
+                        }
                     } else if (words[0].equals("promouvoir")) {
                         if (Objects.equals(Database.query("SELECT PERMISSION FROM user WHERE ID = '"+words[1]+"'"), "user")) {
                             Database.queryUpdate("UPDATE user SET PERMISSION = 'Modo' WHERE ID = '"+words[1]+"'");
@@ -154,14 +156,14 @@ class Server {
                             String Username = Database.query("SELECT USERNAME FROM user WHERE ID = '"+words[1]+"'");
                             String Password = Database.query("SELECT PASSWORD FROM user WHERE ID = '"+words[1]+"'");
                             out.println("promouvoir "+Username+" "+Password+" "+Permission);
-                        } else if (Objects.equals(Database.query("SELECT PERMISSION FROM user WHERE ID = '"+words[1]+"'"), "Modo")) {
+                        } else if (Objects.equals(Database.query("SELECT PERMISSION FROM user WHERE ID = '"+words[1]+"'"), "Modo")){
                             Database.queryUpdate("UPDATE user SET PERMISSION = 'Admin' WHERE ID = '"+words[1]+"'");
                             String Permission = Database.query("SELECT PERMISSION FROM user WHERE ID = '"+words[1]+"'");
                             String Username = Database.query("SELECT USERNAME FROM user WHERE ID = '"+words[1]+"'");
                             String Password = Database.query("SELECT PASSWORD FROM user WHERE ID = '"+words[1]+"'");
                             out.println("promouvoir "+Username+" "+Password+" "+Permission);
                         } else if (Objects.equals(Database.query("SELECT PERMISSION FROM user WHERE ID = '"+words[1]+"'"), "Admin")) {
-                            out.println("promouvoir impossible");
+                            out.println("promouvoirAdmin");
                         }
                     } else if (words[0].equals("exit")){
                         Database.queryUpdate("DROP TABLE user, message, log");

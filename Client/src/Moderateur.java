@@ -18,27 +18,28 @@ public class Moderateur extends JFrame{
     private JButton BOUTONBAN12;
     private JButton BOUTONBAN13;
 
-    public Moderateur(PrintWriter out){
+    public Moderateur(PrintWriter out, String Username, String Password){
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setSize(800, 600);
         frame.setVisible(true);
         frame.setContentPane(Panel1);
 
-        BOUTONBAN0.addActionListener(e -> out.println("bannir "+"1"));
-        BOUTONBAN1.addActionListener(e -> out.println("bannir "+"2"));
-        BOUTONBAN2.addActionListener(e -> out.println("bannir "+"3"));
-        BOUTONBAN3.addActionListener(e -> out.println("bannir "+"4"));
-        BOUTONBAN4.addActionListener(e -> out.println("bannir "+"5"));
-        BOUTONBAN5.addActionListener(e -> out.println("bannir "+"6"));
-        BOUTONBAN6.addActionListener(e -> out.println("bannir "+"7"));
-        BOUTONBAN7.addActionListener(e -> out.println("bannir "+"8"));
-        BOUTONBAN8.addActionListener(e -> out.println("bannir "+"9"));
-        BOUTONBAN9.addActionListener(e -> out.println("bannir "+"10"));
-        BOUTONBAN10.addActionListener(e -> out.println("bannir "+"11"));
-        BOUTONBAN11.addActionListener(e -> out.println("bannir "+"12"));
-        BOUTONBAN12.addActionListener(e -> out.println("bannir "+"13"));
-        BOUTONBAN13.addActionListener(e -> out.println("bannir "+"14"));
+        BOUTONBAN0.addActionListener(e -> out.println("bannir "+"1"+" "+Username+" "+Password));
+        BOUTONBAN1.addActionListener(e -> out.println("bannir "+"2"+" "+Username+" "+Password));
+        BOUTONBAN2.addActionListener(e -> out.println("bannir "+"3"+" "+Username+" "+Password));
+        BOUTONBAN3.addActionListener(e -> out.println("bannir "+"4"+" "+Username+" "+Password));
+        BOUTONBAN4.addActionListener(e -> out.println("bannir "+"5"+" "+Username+" "+Password));
+        BOUTONBAN5.addActionListener(e -> out.println("bannir "+"6"+" "+Username+" "+Password));
+        BOUTONBAN6.addActionListener(e -> out.println("bannir "+"7"+" "+Username+" "+Password));
+        BOUTONBAN7.addActionListener(e -> out.println("bannir "+"8"+" "+Username+" "+Password));
+        BOUTONBAN8.addActionListener(e -> out.println("bannir "+"9"+" "+Username+" "+Password));
+        BOUTONBAN9.addActionListener(e -> out.println("bannir "+"10"+" "+Username+" "+Password));
+        BOUTONBAN10.addActionListener(e -> out.println("bannir "+"11"+" "+Username+" "+Password));
+        BOUTONBAN11.addActionListener(e -> out.println("bannir "+"12"+" "+Username+" "+Password));
+        BOUTONBAN12.addActionListener(e -> out.println("bannir "+"13"+" "+Username+" "+Password));
+        BOUTONBAN13.addActionListener(e -> out.println("bannir "+"14"+" "+Username+" "+Password));
+
     }
 
 }

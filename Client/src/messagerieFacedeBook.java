@@ -386,12 +386,11 @@ public class messagerieFacedeBook extends JFrame {
             }
         }
     }
-
     public void UserOption(){
         new optionUserLambda();
     }
     public void ModoOption(PrintWriter out){
-        new Moderateur(out);
+        new Moderateur(out, username, password);
     }
     public void AdminOption(PrintWriter out){
         new Administrateur(out,username,password);

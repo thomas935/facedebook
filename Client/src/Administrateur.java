@@ -56,19 +56,20 @@ public class Administrateur {
         frame.setContentPane(Panel1);
 
         BANNIRButton.addActionListener(e -> out.println("bannir "+"1 "+ Username+" "+Password));
-        BANNIRButton1.addActionListener(e -> out.println("bannir "+"2"));
-        BANNIRButton2.addActionListener(e -> out.println("bannir "+"3"));
-        BANNIRButton3.addActionListener(e -> out.println("bannir "+"4"));
-        BANNIRButton4.addActionListener(e -> out.println("bannir "+"5"));
-        BANNIRButton5.addActionListener(e -> out.println("bannir "+"6"));
-        BANNIRButton6.addActionListener(e -> out.println("bannir "+"7"));
-        BANNIRButton7.addActionListener(e -> out.println("bannir "+"8"));
-        BANNIRButton8.addActionListener(e -> out.println("bannir "+"9"));
-        BANNIRButton9.addActionListener(e -> out.println("bannir "+"10"));
-        BANNIRButton10.addActionListener(e -> out.println("bannir "+"11"));
-        BANNIRButton11.addActionListener(e -> out.println("bannir "+"12"));
-        BANNIRButton12.addActionListener(e -> out.println("bannir "+"13"));
-        BANNIRButton13.addActionListener(e -> out.println("bannir "+"14"));
+        BANNIRButton1.addActionListener(e -> out.println("bannir "+"2 "+ Username+" "+Password));
+        BANNIRButton2.addActionListener(e -> out.println("bannir "+"3 "+ Username+" "+Password));
+        BANNIRButton3.addActionListener(e -> out.println("bannir "+"4 "+ Username+" "+Password));
+        BANNIRButton4.addActionListener(e -> out.println("bannir "+"5 "+ Username+" "+Password));
+        BANNIRButton5.addActionListener(e -> out.println("bannir "+"6 "+ Username+" "+Password));
+        BANNIRButton6.addActionListener(e -> out.println("bannir "+"7 "+ Username+" "+Password));
+        BANNIRButton7.addActionListener(e -> out.println("bannir "+"8 "+ Username+" "+Password));
+        BANNIRButton8.addActionListener(e -> out.println("bannir "+"9 "+ Username+" "+Password));
+        BANNIRButton9.addActionListener(e -> out.println("bannir "+"10 "+ Username+" "+Password));
+        BANNIRButton10.addActionListener(e -> out.println("bannir "+"11 "+ Username+" "+Password));
+        BANNIRButton11.addActionListener(e -> out.println("bannir "+"12 "+ Username+" "+Password));
+        BANNIRButton12.addActionListener(e -> out.println("bannir "+"13 "+ Username+" "+Password));
+        BANNIRButton13.addActionListener(e -> out.println("bannir "+"14 "+ Username+" "+Password));
+
 
         PROMOTIONButton0.addActionListener(e -> out.println("promouvoir "+"1"));
         PROMOTIONButton1.addActionListener(e -> out.println("promouvoir "+"2"));

@@ -23,8 +23,6 @@ class Client {
             BufferedReader in
                     = new BufferedReader(new InputStreamReader(
                     socket.getInputStream()));
-
-
             String line = null;
             new Login("Login",out);
             while (!"exit".equalsIgnoreCase(line)) {
@@ -32,7 +30,7 @@ class Client {
                 line = in.readLine();
                 String[] words = line.split(" ");
                 if (Objects.equals(words[0], "connexion")){
-                    System.out.println("Connection established");
+
                     messagerieFacedeBooks.add(new messagerieFacedeBook(out,words[1],words[2],words[4]));
                     for (messagerieFacedeBook messagerieFacedeBook : messagerieFacedeBooks) {
                         messagerieFacedeBook.Statut(words[3]);
@@ -77,11 +75,8 @@ class Client {
                             messagerieFacedeBook.setOPTIONButton(words[3]);
                         }
                     }
-                }
-
-                else if (Objects.equals(words[0], "getdata")){
-
-                    new test_data();
+                } else if (Objects.equals(words[0],"bannirerreur")) {
+                    JOptionPane.showMessageDialog(null, "Impossible de bannir l'utilisateur.");
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Identifiants invalides.");
