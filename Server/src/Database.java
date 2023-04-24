@@ -241,6 +241,7 @@ public class Database {
             }
         }
     }
+
     public static void LogConnexion(String username, String password){
         LocalDateTime myDateObj;
         myDateObj = LocalDateTime.now();
@@ -250,6 +251,7 @@ public class Database {
         int USER_ID = Integer.parseInt(Objects.requireNonNull(Database.getDatabase("SELECT ID FROM `User` WHERE USERNAME ='" +username+"' AND PASSWORD = '"+password+"'"))) ;
         Database.queryUpdate("INSERT INTO `log`(`USER_ID`, `TIMESTAMP`, `TYPE`) VALUES ('"+USER_ID+"','"+formattedDate+"' ,'connexion')");
         Database.queryUpdate("UPDATE user SET STATUT = 1 WHERE USERNAME ='" +username+"' AND PASSWORD = '"+password+"'");
+        Database.queryUpdate("UPDATE user SET LAST_CONNECTION_TIME ='"+formattedDate+"' WHERE USERNAME ='" +username+"' AND PASSWORD = '"+password+"'");
     }
     public static void LogDeconnexion(String username, String password){
         LocalDateTime myDateObj;
