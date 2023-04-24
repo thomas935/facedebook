@@ -65,7 +65,6 @@ public class messagerieFacedeBook extends JFrame {
     private JLabel Statut2;
     private JLabel Statut1;
     private JLabel Statut13;
-    private JButton VEILLEButton;
     private JFrame frame;
 
 
