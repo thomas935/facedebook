@@ -74,6 +74,7 @@ public class messagerieFacedeBook extends JFrame {
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setSize(800, 600);
         frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
         frame.setContentPane(panel1);
         OPTIONButton.setText(Permission+"- Options");
         this.username = username;

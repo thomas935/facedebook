@@ -20,6 +20,7 @@ public class Login extends JFrame {
         JFrame frame = new JFrame(windowLogin);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(600, 450);
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         frame.setContentPane(panel1);
         this.out = out;

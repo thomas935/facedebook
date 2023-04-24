@@ -1,12 +1,8 @@
-
 import javax.swing.*;
 import java.io.*;
 import java.net.*;
 import java.util.*;
 import javax.swing.*;
-
-
-
 
 // Client class
 class Client {
@@ -18,7 +14,6 @@ class Client {
         // number
         try (Socket socket = new Socket("localhost", 1234)) {
             //test
-
 
             // writing to server
             PrintWriter out = new PrintWriter(
