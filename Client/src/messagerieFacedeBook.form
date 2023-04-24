@@ -870,7 +870,7 @@
                     <properties>
                       <font name="JetBrains Mono" style="1"/>
                       <foreground color="-1118482"/>
-                      <text value="pseudo"/>
+                      <text value=""/>
                     </properties>
                   </component>
                   <component id="3e60f" class="javax.swing.JLabel" binding="HEURE4">
@@ -880,7 +880,7 @@
                     <properties>
                       <font name="JetBrains Mono" style="2"/>
                       <foreground color="-1118482"/>
-                      <text value="heure"/>
+                      <text value=""/>
                     </properties>
                   </component>
                   <component id="e9168" class="javax.swing.JLabel" binding="TextOut4">
@@ -912,7 +912,7 @@
                     <properties>
                       <font name="JetBrains Mono" style="1"/>
                       <foreground color="-1118482"/>
-                      <text value="pseudo"/>
+                      <text value=""/>
                     </properties>
                   </component>
                   <component id="e0d84" class="javax.swing.JLabel" binding="HEURE3">
@@ -922,7 +922,7 @@
                     <properties>
                       <font name="JetBrains Mono" style="2"/>
                       <foreground color="-1118482"/>
-                      <text value="heure"/>
+                      <text value=""/>
                     </properties>
                   </component>
                   <component id="cb096" class="javax.swing.JLabel" binding="TextOut3">
@@ -954,7 +954,7 @@
                     <properties>
                       <font name="JetBrains Mono" style="1"/>
                       <foreground color="-1118482"/>
-                      <text value="pseudo"/>
+                      <text value=""/>
                     </properties>
                   </component>
                   <component id="62aa9" class="javax.swing.JLabel" binding="HEURE2">
@@ -964,7 +964,7 @@
                     <properties>
                       <font name="JetBrains Mono" style="2"/>
                       <foreground color="-1118482"/>
-                      <text value="heure"/>
+                      <text value=""/>
                     </properties>
                   </component>
                   <component id="1a5df" class="javax.swing.JLabel" binding="TextOut2">
@@ -1010,7 +1010,7 @@
                     <properties>
                       <font name="JetBrains Mono" style="2"/>
                       <foreground color="-1118482"/>
-                      <text value="heure"/>
+                      <text value=""/>
                     </properties>
                   </component>
                   <component id="4dfb6" class="javax.swing.JLabel" binding="USERNAME1">
@@ -1020,7 +1020,7 @@
                     <properties>
                       <font name="JetBrains Mono" style="1"/>
                       <foreground color="-1118482"/>
-                      <text value="pseudo"/>
+                      <text value=""/>
                     </properties>
                   </component>
                 </children>
@@ -1043,7 +1043,7 @@
                     <properties>
                       <font name="JetBrains Mono" style="1"/>
                       <foreground color="-1118482"/>
-                      <text value="pseudo"/>
+                      <text value=""/>
                     </properties>
                   </component>
                   <component id="f16ab" class="javax.swing.JLabel" binding="HEURE0">
@@ -1053,7 +1053,7 @@
                     <properties>
                       <font name="JetBrains Mono" style="2"/>
                       <foreground color="-1118482"/>
-                      <text value="heure"/>
+                      <text value=""/>
                     </properties>
                   </component>
                   <component id="1cca3" class="javax.swing.JLabel" binding="TextOut0">
