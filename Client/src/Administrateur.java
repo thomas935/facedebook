@@ -30,7 +30,6 @@ public class Administrateur {
     private JButton PROMOTIONButton11;
     private JButton PROMOTIONButton12;
     private JButton PROMOTIONButton13;
-    private JButton STATISTIQUESButton;
     private JLabel PSEUDO0;
     private JLabel PSEUDO1;
     private JLabel PSEUDO2;
